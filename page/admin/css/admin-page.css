@@ -1,0 +1,17 @@
+.glassmorph,
+.main-footer {
+    background: rgba(51, 57, 64, 255);
+    box-shadow: 0 4px 30px rgba(110, 89, 89, 0.849);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.background-img {
+    background-image: url(../../../dist/img/background.jpg); background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-white .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: aqua;
+}
