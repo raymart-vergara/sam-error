@@ -37,7 +37,7 @@
                                 </div>
                             <div class="p-2">
                             <button class="btn btn-info shadow bg-info" id="searchReqBtn"
-                                    onclick="search_accounts()">Search <i class="fas fa-search"></i></button>
+                                    onclick="search_account()">Search <i class="fas fa-search"></i></button>
                             </div>
                         </div>
 

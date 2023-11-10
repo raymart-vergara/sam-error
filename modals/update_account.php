@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="d-flex justify-content-center">
-                            <a type="button" class="btn btn-danger mx-3" data-dismiss="modal" aria-label="Close"> Cancel</a>
+                            <a type="button" class="btn btn-danger mx-3" onclick="delete_account()"> Delete</a>
                             <a href="#" class="btn btn-info mx-3" onclick="update_account()">Register</a>
                         </div>
                     </div>

@@ -20,6 +20,43 @@
     </div>
     <!-- /.content-header -->
     <!-- Main content -->
+    <section>
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div id="chart-container">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div id="chart-container">
+                            <canvas id="myChart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-6">
+                    <div class="card">
+                        <div id="chart-container">
+                            <canvas id="myChart3"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div id="chart-container">
+                            <canvas id="myChart4"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <?php include 'plugins/footer.php'; ?>
+<?php include 'plugins/js/dashboard_script.php'; ?>

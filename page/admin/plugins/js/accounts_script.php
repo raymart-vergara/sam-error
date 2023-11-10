@@ -17,6 +17,23 @@
         });
     }
 
+    const   search_account =()=>{
+        let full_name = document.getElementById('full_name_search').value;
+        $.ajax({
+            type: "POST",
+            url: '../../process/admin/accounts/accounts_p.php',
+            cache: false,
+            data:{
+                method:'search_account',
+                full_name:full_name
+            },success: function (response) {
+                $('#list_of_accounts').html(response);
+                $('#spinner').fadeOut();
+              
+            }
+        });
+    }
+
     const register_accounts = () => {
         let full_name = document.getElementById('full_name').value;
         let username = document.getElementById('username').value;
@@ -154,7 +171,7 @@
                     $('#update_username').val('');
                     $('#update_password').val('');
                     $('#update_role').val('');
-                    
+
                 } else if (response == 'duplicate') {
                     Swal.fire({
                         icon: 'info',
@@ -163,6 +180,40 @@
                         showConfirmButton: false,
                         timer: 1000
                     });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error !!!',
+                        text: 'Error',
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                }
+            }
+        });
+    }
+
+    const delete_account = () => {
+        let update_id = document.getElementById('update_id').value;
+        $.ajax({
+            type: "POST",
+            url: "../../process/admin/accounts/accounts_p.php",
+            cache: false,
+            data: {
+                method: 'delete_account',
+                update_id: update_id
+            },
+            success: function (response) {
+                if (response == 'success') {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Succesfully Deleted !!!',
+                        text: 'Information',
+                        showConfirmButton: false,
+                        timer: 1000
+                    });
+                    load_accounts();
+                    $('#update_account').modal('hide');
                 } else {
                     Swal.fire({
                         icon: 'error',

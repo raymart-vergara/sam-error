@@ -12,7 +12,7 @@ if ($method == 'account_list') {
     if ($stmt->rowCount() > 0) {
         foreach ($stmt as $row) {
             $c++;
-            echo '<tr style="cursor:pointer;" class="modal-trigger" data-toggle="modal" data-target="#update_account" onclick="get_account_details(&quot;' . $row['id'] . '~!~' . $row['username'] . '~!~' . $row['full_name'] . '~!~' . $row['password'] . '~!~' . $row['role'] .'&quot;)">';
+            echo '<tr style="cursor:pointer;" class="modal-trigger" data-toggle="modal" data-target="#update_account" onclick="get_account_details(&quot;' . $row['id'] . '~!~' . $row['username'] . '~!~' . $row['full_name'] . '~!~' . $row['password'] . '~!~' . $row['role'] . '&quot;)">';
             echo "<td>" . $c . "</td>";
             echo "<td>" . $row["username"] . "</td>";
             echo "<td>" . $row["full_name"] . "</td>";
@@ -71,4 +71,42 @@ if ($method == 'update_account') {
     }
 }
 
+if ($method == "search_account") {
+    $full_name = $_POST['full_name'];
+    $c=0;
+
+    $query = "SELECT * FROM users_account WHERE `full_name` LIKE '%$full_name%'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        foreach ($stmt->fetchAll() as $row){
+            $c++;
+            echo '<tr style="cursor:pointer;" class="modal-trigger" data-toggle="modal" data-target="#update_account" onclick="get_account_details(&quot;' . $row['id'] . '~!~' . $row['username'] . '~!~' . $row['full_name'] . '~!~' . $row['password'] . '~!~' . $row['role'] . '&quot;)">';
+            echo "<td>" . $c . "</td>";
+            echo "<td>" . $row["username"] . "</td>";
+            echo "<td>" . $row["full_name"] . "</td>";
+            echo "<td>" . $row["role"] . "</td>";
+            echo "</tr>";
+        }
+    }else {
+		echo '<tr>';
+		echo '<td colspan="6" style="text-align:center; color:red;">No Result !!!</td>';
+		echo '</tr>';
+	}
+}
+
+if ($method == 'delete_account') {
+    $update_id = $_POST['update_id'];
+
+    $query = "DELETE FROM users_account WHERE id = '$update_id'";
+    $stmt = $conn->prepare($query);
+    if ($stmt->execute()) {
+        echo 'success';
+    } else {
+        echo 'error';
+    }
+}
+
+
+$conn = NULL;
 ?>
