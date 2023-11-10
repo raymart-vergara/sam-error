@@ -119,30 +119,31 @@ include '../../process/login.php';
     </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
     <div class="wrapper">
-
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="../../dist/img/logo.png" alt="logo" height="60" width="60">
+        <div class="preloader flex-column justify-content-center align-items-center bg-dark">
+            <img class="animation__shake" src="../../dist/img/sam-error-logo.png" alt="logo" height="100" width="100">
         </div>
-
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand glassmorph">
-            <!-- Left navbar links -->
+        <nav class="main-header navbar navbar-expand bg-dark bg-gray navbar-light bg-gray-dark border-0 ">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars text-white"></i></a>
                 </li>
             </ul>
-
-            <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
+                <h5 class="m-0 p-0">SAM ERROR MONITORING SYSTEM</h5>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt text-white"></i>
                     </a>
                 </li>
+
             </ul>
         </nav>
         <!-- /.navbar -->

@@ -8,7 +8,7 @@
 <?php
 //MODALS
 include '../../modals/logout_modal.php';
-// include '../../modals/new_account.php';
+include '../../modals/new_account.php';
 // include '../../modals/update_account.php';
 // include '../../modals/import_accounts.php';
 // include '../../modals/new_exc.php';
