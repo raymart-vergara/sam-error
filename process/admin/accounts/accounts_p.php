@@ -12,13 +12,15 @@ if ($method == 'account_list') {
     if ($stmt->rowCount() > 0) {
         foreach ($stmt as $row) {
             $c++;
-            echo "<tr>";
+            echo '<tr style="cursor:pointer;" class="modal-trigger" data-toggle="modal" data-target="#update_account" onclick="get_account_details(&quot;' . $row['id'] . '~!~' . $row['username'] . '~!~' . $row['full_name'] . '~!~' . $row['password'] . '~!~' . $row['role'] .'&quot;)">';
             echo "<td>" . $c . "</td>";
             echo "<td>" . $row["username"] . "</td>";
             echo "<td>" . $row["full_name"] . "</td>";
             echo "<td>" . $row["role"] . "</td>";
             echo "</tr>";
         }
+    } else {
+        echo "<td> No Result</td>";
     }
 }
 
@@ -41,6 +43,30 @@ if ($method == 'register_account') {
             echo 'success';
         } else {
             echo 'error';
+        }
+    }
+}
+
+if ($method == 'update_account') {
+    $update_id = $_POST['update_id'];
+    $update_full_name = trim($_POST['update_full_name']);
+    $update_username = trim($_POST['update_username']);
+    $update_password = trim($_POST['update_password']);
+    $update_role = trim($_POST['update_role']);
+
+    $query = "SELECT `id` FROM `users_account` WHERE `full_name` ='$update_full_name' AND `username` = '$update_username' AND `role` = '$update_role'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        echo "duplicate";
+    } else {
+        $stmt = NULL;
+        $query = "UPDATE users_account SET `full_name`= '$update_full_name' , `username` = '$update_username', `password` = '$update_password', `role` = '$update_role' WHERE id = '$update_id'";
+        $stmt = $conn->prepare($query);
+        if ($stmt->execute()) {
+            echo "success";
+        } else {
+            echo "error";
         }
     }
 }

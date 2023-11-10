@@ -116,6 +116,30 @@ include '../../process/login.php';
 
             text-align: center;
         }
+
+        /* scrollbar */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #332D2D;
+        }
     </style>
 </head>
 
@@ -129,12 +153,13 @@ include '../../process/login.php';
         <nav class="main-header navbar navbar-expand bg-dark bg-gray navbar-light bg-gray-dark border-0 ">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars text-white"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars text-white"></i></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <h5 class="m-0 p-0">SAM ERROR MONITORING SYSTEM</h5>
+                    <h5 class="m-0 p-0">SAM ERROR MONITORING SYSTEM</h5>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
