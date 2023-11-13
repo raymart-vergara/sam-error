@@ -22,11 +22,15 @@
     <!-- Main content -->
     <section>
         <div class="container-lg">
+            <button class="btn btn-secondary">Import</button>
+            <input type="date"  placeholder="date"/>
+        </div>
+        <div class="container-lg">
             <div class="row">
                 <div class="col-6">
                     <div class="card">
                         <div id="chart-container">
-                            <canvas id="myChart"></canvas>
+                            <canvas id="bar-chart"></canvas>
                         </div>
                     </div>
                 </div>

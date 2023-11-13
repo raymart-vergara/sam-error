@@ -20,6 +20,8 @@ include '../../process/login.php';
 
     <link rel="stylesheet" href="css/admin-page.css">
 
+    <script src="../../node_modules/chart.js/dist/chart.umd.js"></script>
+
     <link rel="icon" href="../../dist/img/sam-error-logo.png" type="image/x-icon" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="../../dist/css/font.min.css">
