@@ -14,13 +14,13 @@
                 method: 'feed_ng'
             },
             success: function (data) {
-                var categories = [];
-                var values = [];
+                var error_date = [];
+                var Feed_NG = [];
                 var target = [];
 
                 for (var i = 0; i < data.length; i++) {
-                    categories.push(data[i].error_date);
-                    values.push(data[i].Feed_NG);
+                    error_date.push(data[i].error_date);
+                    Feed_NG.push(data[i].Feed_NG);
                     target.push(data[i].target);
                 }
 
@@ -31,13 +31,13 @@
                     //   indexAxis: 'y',
                     // },
                     data: {
-                        labels: categories,
+                        labels: error_date,
                         datasets: [{
                             label: 'Feed NG',
                             backgroundColor: 'rgba(255, 99, 132, 0.2)',
                             borderColor: 'rgba(255, 99, 132, 1)',
                             borderWidth: 1,
-                            data: values,
+                            data: Feed_NG,
                         },
                         {
                             label: 'Target',
