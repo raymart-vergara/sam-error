@@ -22,38 +22,47 @@
     <!-- Main content -->
     <section>
         <div class="container-lg">
+            <div class="row">
+                <div class="col">
+                    <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#target_data_modal">
+                        <i class="nav-icon far fa-circle text-danger"><p class="text">Logout</p></i>
+                        
+                    </a>
+                </div>
+            </div>
             <button class="btn btn-secondary">Import</button>
-            <input type="date"  placeholder="date"/>
+            <input type="date" placeholder="date" />
+
         </div>
         <div class="container-lg">
             <div class="row">
-                <div class="col-6">
-                    <div class="card">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card shadow">
                         <div id="chart-container">
-                            <canvas id="bar-chart"></canvas>
+                            <canvas id="feed_ng_chart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="card">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card shadow">
                         <div id="chart-container">
-                            <canvas id="myChart2"></canvas>
+                            <canvas id="right_strip_chart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-            <div class="col-6">
-                    <div class="card">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card shadow">
                         <div id="chart-container">
-                            <canvas id="myChart3"></canvas>
+                            <canvas id="left_strip_chart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="card">
+                <div class="col-lg-6 col-md-12">
+                    <div class="card shadow">
                         <div id="chart-container">
-                            <canvas id="myChart4"></canvas>
+                            <canvas id="camera_chart"></canvas>
                         </div>
                     </div>
                 </div>

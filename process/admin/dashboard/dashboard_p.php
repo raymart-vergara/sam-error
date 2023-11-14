@@ -11,7 +11,7 @@ if ($method == 'feed_ng') {
    // $check = "SELECT  DISTINCT(DATE(error_date)) AS `error_date`, COUNT(error_code) as `Feed_NG`, `target` 
    // FROM sam_error
    // GROUP BY error_date";
-   $check = "SELECT DATE(error_date) AS error_date, COUNT( error_date ) AS Feed_NG, `target` FROM sam_error WHERE error_code='M18045' GROUP BY DATE(error_date)";
+   $check = "SELECT DATE(error_date) AS error_date , `target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code='M18045' GROUP BY DATE(error_date)";
    $stmt = $conn->prepare($check);
    $stmt->execute();
 
@@ -19,9 +19,69 @@ if ($method == 'feed_ng') {
    foreach ($stmt->fetchALL() as $row) {
       $data[] = $row;
    }
-
    // Fetch data from the second table (table2)
+   echo json_encode($data);
+}
 
+
+if ($method == 'right_strip_ng') {
+   $check = "SELECT DATE(error_date) AS error_date,`target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code='M18052' GROUP BY DATE(error_date)";
+   $stmt = $conn->prepare($check);
+   $stmt->execute();
+
+   $data = [];
+   foreach ($stmt->fetchALL() as $row) {
+      $data[] = $row;
+   }
+   // Fetch data from the second table (table2)
+   echo json_encode($data);
+}
+
+if ($method == 'left_strip_ng') {
+   $check = "SELECT DATE(error_date) AS error_date,`target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code='M18051' GROUP BY DATE(error_date)";
+   $stmt = $conn->prepare($check);
+   $stmt->execute();
+
+   $data = [];
+   foreach ($stmt->fetchALL() as $row) {
+      $data[] = $row;
+   }
+   // Fetch data from the second table (table2)
+   echo json_encode($data);
+}
+
+if ($method == 'camera_ng') {
+   $check = "SELECT DATE(error_date) AS error_date,`target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code IN(
+   'M18255',
+   'M18247',
+   'M18253',
+   'M18258',
+   'M18261',
+   'M18260',
+   'M18056',
+   'M18055',
+   'M18236',
+   'M18238',
+   'M18237',
+   'M18244',
+   'M18239',
+   'M18259',
+   'M18241',
+   'M18243',
+   'M18254',
+   'M18257',
+   'M18263',
+   'M18252',
+   'M18242'
+   )  GROUP BY DATE(error_date)";
+   $stmt = $conn->prepare($check);
+   $stmt->execute();
+
+   $data = [];
+   foreach ($stmt->fetchALL() as $row) {
+      $data[] = $row;
+   }
+   // Fetch data from the second table (table2)
    echo json_encode($data);
 }
 
