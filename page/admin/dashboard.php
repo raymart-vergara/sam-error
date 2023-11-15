@@ -22,16 +22,25 @@
     <!-- Main content -->
     <section>
         <div class="container-lg">
-            <div class="row">
-                <div class="col">
-                    <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#target_data_modal">
-                        <i class="nav-icon far fa-circle text-danger"><p class="text">Logout</p></i>
-                        
-                    </a>
+            <div class="row m-0 p-0 mb-3">
+                <div class="col m-0 p-0 mb-3">
+                    <button class="btn btn-secondary shadow">Import Machine</button>
+                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#target_data_modal">+ Add Target</a>
+                </div>
+                
+                <div class="row">
+                    <div class="col mb-3 shadow">
+                        <input type="date" id="date_from" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="col mb-3 shadow">
+                        <input type="date" id="date_from" class="form-control" autocomplete="off">
+                    </div>
+                    <div class="col mb-3 shadow">
+                        <button class="btn btn-secondary shadow">Sam Machine</button>
+                    </div>
+
                 </div>
             </div>
-            <button class="btn btn-secondary">Import</button>
-            <input type="date" placeholder="date" />
 
         </div>
         <div class="container-lg">
