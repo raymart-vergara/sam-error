@@ -55,68 +55,7 @@ include '../../process/login.php';
             }
         }
 
-        .certificate-container {
-            padding: 50px;
-            width: 1024px;
-            /* background-image: url("../../dist/img/CertificateTemplatev2.jpg"); */
-        }
-
-        .certificate {
-            border: 20px solid #0C5280;
-            padding: 25px;
-            height: 600px;
-            position: relative;
-        }
-
-        .certificate:after {
-            content: '';
-            top: 0px;
-            left: 0px;
-            bottom: 0px;
-            right: 0px;
-            position: absolute;
-            background-size: 100%;
-            z-index: -1;
-        }
-
-        .certificate-header>.logo {
-            width: 80px;
-            height: 80px;
-        }
-
-        .certificate-title {
-            text-align: center;
-        }
-
-        .certificate-body {
-            text-align: center;
-        }
-
-        h1 {
-
-            font-weight: 400;
-            font-size: 48px;
-            color: #0C5280;
-        }
-
-        .student-name {
-            font-size: 24px;
-        }
-
-        .certificate-content {
-            margin: 0 auto;
-            width: 750px;
-        }
-
-        .about-certificate {
-            width: 380px;
-            margin: 0 auto;
-        }
-
-        .topic-description {
-
-            text-align: center;
-        }
+      
 
         /* scrollbar */
         /* width */
@@ -148,7 +87,7 @@ include '../../process/login.php';
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center bg-dark">
-            <img class="animation__shake" src="../../dist/img/sam-error-logo.png" alt="logo" height="100" width="100">
+            <img class="animation__shake" src="../../dist/img/sam-error-logo.png" alt="logo" height="300" width="300">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand bg-dark bg-gray navbar-light bg-gray-dark border-0 ">

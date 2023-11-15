@@ -14,8 +14,11 @@
           <div class="col-lg-12 col-12 mt-3">
             <div class="row mb-3">
               <div class="col-6">
-                <input type="text" id="sam_machine_data" class="form-control" autocomplete="off"
-                  placeholder="SAM MACHINE">
+              <select name="input_sam_machine" id="input_sam_machine" autocomplete="off"
+                            style="color: #525252;font-size: 15px;border-radius: .22rem; border: 1px solid #ced4da; background: #FFF;height:37px; width:100%;"
+                            class="pl-2" required>
+                            <!-- <option>Select Machine</option> -->
+                        </select>
               </div>
               <div class="col-6">
                 <input type="number" id="input_target" class="form-control" autocomplete="off"

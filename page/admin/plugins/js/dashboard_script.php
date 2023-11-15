@@ -5,8 +5,23 @@
         right_strip_ng();
         left_strip_ng();
         camera_ng();
-
+        fetch_opt_sam_machine_data();
     });
+
+    const fetch_opt_sam_machine_data = () => {
+        $.ajax({
+            url: '../../process/admin/dashboard/dashboard_p.php',
+            type: 'POST',
+            cache: false,
+            data: {
+                method: 'fetch_opt_sam_machine_data',
+            },
+            success: function(response) {
+                $('#sam_machine_data').html(response);
+                $('#input_sam_machine').html(response);
+            }
+        });
+    }
 
 
     const feed_ng = () => {
@@ -86,7 +101,7 @@
                     data: {
                         labels: error_date,
                         datasets: [{
-                            label: 'Feed NG',
+                            label: 'Right Strip NG',
                             backgroundColor: 'rgba(255, 99, 132, 0.2)',
                             borderColor: 'rgba(255, 99, 132, 1)',
                             borderWidth: 1,
@@ -135,7 +150,7 @@
                     data: {
                         labels: error_date,
                         datasets: [{
-                            label: 'Feed NG',
+                            label: 'Left Strip NG',
                             backgroundColor: 'rgba(255, 99, 132, 0.2)',
                             borderColor: 'rgba(255, 99, 132, 1)',
                             borderWidth: 1,
@@ -184,7 +199,7 @@
                     data: {
                         labels: error_date,
                         datasets: [{
-                            label: 'Feed NG',
+                            label: 'Camera Error',
                             backgroundColor: 'rgba(255, 99, 132, 0.2)',
                             borderColor: 'rgba(255, 99, 132, 1)',
                             borderWidth: 1,

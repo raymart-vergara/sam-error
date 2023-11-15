@@ -25,9 +25,10 @@
             <div class="row m-0 p-0 mb-3">
                 <div class="col m-0 p-0 mb-3">
                     <button class="btn btn-secondary shadow">Import Machine</button>
-                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#target_data_modal">+ Add Target</a>
+                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#target_data_modal">+ Add
+                        Target</a>
                 </div>
-                
+
                 <div class="row">
                     <div class="col mb-3 shadow">
                         <input type="date" id="date_from" class="form-control" autocomplete="off">
@@ -35,8 +36,12 @@
                     <div class="col mb-3 shadow">
                         <input type="date" id="date_from" class="form-control" autocomplete="off">
                     </div>
-                    <div class="col mb-3 shadow">
-                        <button class="btn btn-secondary shadow">Sam Machine</button>
+                    <div class="col">
+                        <select name="sam_machine_data" id="sam_machine_data" autocomplete="off"
+                        style="color: #525252;font-size: 15px;border-radius: .22rem; border: 1px solid #ced4da; background: #FFF;height:37px; width:100%;"
+                            class="pl-2" required>
+                            <!-- <option>Select Machine</option> -->
+                        </select>
                     </div>
 
                 </div>

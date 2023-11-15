@@ -3,6 +3,21 @@ include '../../../process/conn.php';
 
 $method = $_POST['method'];
 
+if ($method == 'fetch_opt_sam_machine_data') {
+   $query = "SELECT `sam_machine` FROM `sam_machine` ORDER BY id ASC";
+   $stmt = $conn->prepare($query);
+   $stmt->execute();
+   if ($stmt->rowCount() > 0) {
+       echo '<option value="">Select Machine</option>';
+       foreach ($stmt->fetchALL() as $row) {
+           echo '<option>' . htmlspecialchars($row['sam_machine']) . '</option>';
+       }
+   } else {
+       echo '<option>Select Machine</option>';
+   }
+}
+
+
 if ($method == 'feed_ng') {
    // Fetch data from the first table (table1)
    // $check = "SELECT `category`,`error_date`, `target` FROM sam_error WHERE error_code ='M18045'";
