@@ -18,7 +18,11 @@ if ($method == 'fetch_opt_sam_machine_data') {
 }
 
 
+
+
 if ($method == 'feed_ng') {
+   $date_from_search = $_POST['date_from_search'];
+   $date_to_search = $_POST['date_to_search'];
    // Fetch data from the first table (table1)
    // $check = "SELECT `category`,`error_date`, `target` FROM sam_error WHERE error_code ='M18045'";
    // $check = "SELECT COUNT(error_code) AS Feed_NG, error_date FROM sam_error WHERE error_code ='M18045' AND error_date LIKE '2023-11-07%'";
@@ -26,7 +30,7 @@ if ($method == 'feed_ng') {
    // $check = "SELECT  DISTINCT(DATE(error_date)) AS `error_date`, COUNT(error_code) as `Feed_NG`, `target` 
    // FROM sam_error
    // GROUP BY error_date";
-   $check = "SELECT DATE(error_date) AS error_date , `target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code='M18045' GROUP BY DATE(error_date)";
+   $check = "SELECT DATE(error_date) AS error_date , `target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code='M18045'  AND (error_date >= '$date_from_search 00:00:00' AND error_date <= '$date_to_search 23:59:59') GROUP BY DATE(error_date)";
    $stmt = $conn->prepare($check);
    $stmt->execute();
 

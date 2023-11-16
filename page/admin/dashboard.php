@@ -31,10 +31,10 @@
 
                 <div class="row">
                     <div class="col mb-3 shadow">
-                        <input type="date" id="date_from" class="form-control" autocomplete="off">
+                        <input type="date" id="date_from_search" class="form-control" autocomplete="off" onchange="feed_ng()">
                     </div>
                     <div class="col mb-3 shadow">
-                        <input type="date" id="date_from" class="form-control" autocomplete="off">
+                        <input type="date" id="date_to_search" class="form-control" autocomplete="off" onchange="feed_ng()">
                     </div>
                     <div class="col">
                         <select name="sam_machine_data" id="sam_machine_data" autocomplete="off"
