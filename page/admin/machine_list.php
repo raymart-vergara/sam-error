@@ -1,5 +1,5 @@
 <?php include 'plugins/navbar.php'; ?>
-<?php include 'plugins/sidebar/accounts_bar.php'; ?>
+<?php include 'plugins/sidebar/machine_list_bar.php'; ?>
 
 <section class="container-fluid m-0 p-0">
     <!-- Content Wrapper. Contains page content -->
@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-white">ACCOUNT MANAGEMENT</h1>
+                        <h1 class="m-0 text-white">SAM MACHINE LIST</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-                            <li class="breadcrumb-item active">Account Management</li>
+                            <li class="breadcrumb-item active">Machine List</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -29,11 +29,11 @@
                     <section class="container-lg">
                         <div class="d-flex mt-5">
                             <div class="mr-auto p-2">
-                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#new_account">+ Add Account</a>
+                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#new_machine">+ Add Machine</a>
                             </div>
                             <div class="p-2"> 
-                                <input type="text" id="full_name_search" class="form-control shadow border-0"
-                                    autocomplete="off" placeholder="Fullname" />
+                                <input type="text" id="machine_search" class="form-control shadow border-0"
+                                    autocomplete="off" placeholder="Machine Code" />
                                 </div>
                             <div class="p-2">
                             <button class="btn btn-info shadow bg-info" id="searchReqBtn"
@@ -46,9 +46,9 @@
                                 id="accounts_table">
                                 <thead style="text-align:center;">
                                     <th class="bg-info"> # </th>
-                                    <th class="bg-info"> Username </th>
-                                    <th class="bg-info"> Full Name </th>
-                                    <th class="bg-info"> User Type </th>
+                                    <th class="bg-info"> Error Code </th>
+                                    <th class="bg-info"> Error Name </th>
+                                    <th class="bg-info"> Category </th>
                                 </thead>
                                 <tbody id="list_of_accounts" style="text-align:center;"></tbody>
                             </table>

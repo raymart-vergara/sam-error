@@ -3,7 +3,7 @@
 
 <section class="container-fluid m-0 p-0">
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper background-img">
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header bg-info">
             <div class="container-fluid">
@@ -24,10 +24,10 @@
         <!-- Main content -->
         <div class="row">
             <div class="col-12">
-                <div class="card" style="background-color:rgba(255, 255, 255, 0.75)">
+                <div class="card" style="background:white;">
                     <!-- /.card-header -->
                     <section class="container-lg">
-                        <div class="d-flex mt-4 shadow-lg rounded">
+                        <div class="d-flex mt-4">
                             <div class="p-2">
                             <a href="#" class="btn btn-secondary shadow" data-toggle="modal" data-target="#import_error_data"> Import Machine </a>
                             </div>
@@ -55,14 +55,14 @@
                         <div class="container-lg my-4 mb-5">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
-                                    <div class="card rounded shadow-lg"  style="background-color:rgba(255, 255, 255, 0.60)">
+                                    <div class="card rounded shadow"  >
                                         <div id="chart-container">
                                             <canvas id="feed_ng_chart"></canvas>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
-                                    <div class="card rounded shadow-lg" style="background-color:rgba(255, 255, 255, 0.60)">
+                                    <div class="card rounded shadow" >
                                         <div id="chart-container">
                                             <canvas id="right_strip_chart"></canvas>
                                         </div>
@@ -71,14 +71,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-6 col-12">
-                                    <div class="card rounded shadow-lg" style="background-color:rgba(255, 255, 255, 0.60)">
+                                    <div class="card rounded shadow" >
                                         <div id="chart-container">
                                             <canvas id="left_strip_chart"></canvas>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
-                                    <div class="card rounded shadow-lg" style="background-color:rgba(255, 255, 255, 0.60)">
+                                    <div class="card rounded shadow">
                                         <div id="chart-container">
                                             <canvas id="camera_chart"></canvas>
                                         </div>
@@ -95,7 +95,5 @@
         <!-- /.row -->
     </div>
 </section>
-
-
 <?php include 'plugins/footer.php'; ?>
 <?php include 'plugins/js/dashboard_script.php'; ?>

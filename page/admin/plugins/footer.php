@@ -1,10 +1,10 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2023. Developed by: Raymart Vergara</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
-    </div>
-  </footer>
+  <strong>Developed by: Raymart Vergara</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Copyright &copy; 2023 | Version</b> 1.0.0
+  </div>
+</footer>
 <?php
 //MODALS
 include '../../modals/logout_modal.php';
@@ -34,4 +34,5 @@ include '../../modals//import/import_error_data_modal.php';
 <script src="../../dist/js/adminlte.js"></script>
 
 </body>
+
 </html>

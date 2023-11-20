@@ -26,26 +26,26 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item">
-          <a href="dashboard.php" class="nav-link active bg-info">
-            <i class="nav-icon fas fa-bus"></i>
+          <a href="dashboard.php" class="nav-link">
+            <i class="nav-icon fas fa-chart-bar"></i>
             <p>
               Dashboard
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="sam_machine.php" class="nav-link active bg-info">
-            <i class="nav-icon fas fa-user-cog"></i>
+          <a href="machine_list.php" class="nav-link">
+            <i class="nav-icon fas fa-laptop"></i>
             <p>
-              Add Machine
+              Machine List
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="machine_error.php" class="nav-link">
-            <i class="nav-icon fas fa-user-cog"></i>
+          <a href="error_list.php" class="nav-link active bg-info">
+            <i class="nav-icon fas fa-bug"></i>
             <p>
-              Add Error Machine
+              Error List
             </p>
           </a>
         </li>

@@ -1,7 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="dashboard.php" class="brand-link">
-    <img src="../../dist/img/sam-error-logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="../../dist/img/sam-error-logo.png" alt="Logo" class="brand-image img-circle elevation-3"
+      style="opacity: .8">
     <span class="brand-text font-weight-light">&ensp;SAM &ensp;|&ensp; ERROR</span>
   </a>
 
@@ -13,7 +14,9 @@
         <img src="../../dist/img/user.png" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="dashboard.php" class="d-block"><?=htmlspecialchars($_SESSION['name']);?></a>
+        <a href="dashboard.php" class="d-block">
+          <?= htmlspecialchars($_SESSION['name']); ?>
+        </a>
       </div>
     </div>
 
@@ -24,25 +27,25 @@
              with font-awesome or any other icon font library -->
         <li class="nav-item">
           <a href="dashboard.php" class="nav-link">
-            <i class="nav-icon fas fa-bus"></i>
+            <i class="nav-icon fas fa-chart-bar"></i>
             <p>
               Dashboard
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="sam_machine.php" class="nav-link">
-            <i class="nav-icon fas fa-user-cog"></i>
+          <a href="machine_list.php" class="nav-link">
+            <i class="nav-icon fas fa-laptop"></i>
             <p>
-              Add Machine
+              Machine List
             </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="machine_error.php" class="nav-link">
-            <i class="nav-icon fas fa-user-cog"></i>
+          <a href="error_list.php" class="nav-link">
+            <i class="nav-icon fas fa-bug"></i>
             <p>
-              Add Error Machine
+              Error List
             </p>
           </a>
         </li>
@@ -54,7 +57,7 @@
             </p>
           </a>
         </li>
-        <?php include 'logout.php';?>
+        <?php include 'logout.php'; ?>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

@@ -1,5 +1,5 @@
 <?php include 'plugins/navbar.php'; ?>
-<?php include 'plugins/sidebar/accounts_bar.php'; ?>
+<?php include 'plugins/sidebar/error_list_bar.php'; ?>
 
 <section class="container-fluid m-0 p-0">
     <!-- Content Wrapper. Contains page content -->
@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-white">ACCOUNT MANAGEMENT</h1>
+                        <h1 class="m-0 text-white">ERROR MACHINE LIST</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
