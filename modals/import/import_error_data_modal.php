@@ -8,10 +8,10 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="../../process/import/import_rfq.php" enctype="multipart/form-data" method="POST">
+      <form action="../../process/admin/import/import_machine.php" enctype="multipart/form-data" method="POST">
         <div class="modal-body">
           <div class="row">
-            <select name="option_machine_data" id="option_machine_data" autocomplete="off" onchange="fitler_all()"
+            <select name="import_machine_data" id="import_machine_data" autocomplete="off" onchange="fitler_all()"
               class="pl-2 form-control btn bg-secondary shadow mb-3" required>
               <!-- <option>Select Machine</option> -->
             </select>
@@ -20,8 +20,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" class="close" data-dismiss="modal">Close</button>
-          <input type="submit" class="btn btn-info" name="upload" value="Upload" id="full_rfq_btn"
-            onclick="import_full_rfq_button()">
+          <input type="submit" class="btn btn-info" name="upload" value="Upload" id="import_machine_btn">
         </div>
       </form>
     </div>

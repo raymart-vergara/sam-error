@@ -7,6 +7,19 @@
     $(document).ready(function () {
         fetch_opt_sam_machine_data();
         fitler_all();
+        
+        $("#import_machine_btn").click(function () {
+            $('#import_error_data').modal('hide');
+            Swal.fire({
+                            icon: 'info',
+                            title: 'Please Wait!!',
+                            text: '',
+                            showConfirmButton: false,
+                            allowOutsideClick:false,
+                            allowEscapeKey:false,
+                            allowEnterKey:false
+                        });
+        });
     });
 
     const fitler_all = () => {
@@ -27,7 +40,7 @@
             success: function (response) {
                 $('#sam_machine_data').html(response);
                 $('#input_sam_machine').html(response);
-                $('#option_machine_data').html(response);
+                $('#import_machine_data').html(response);
             }
         });
     }
@@ -347,6 +360,7 @@
                         });
                         $('#target_data_modal').modal('hide');
                         $('#input_target').val('');
+                        fitler_all();
                     } else {
                         Swal.fire({
                             icon: 'error',
