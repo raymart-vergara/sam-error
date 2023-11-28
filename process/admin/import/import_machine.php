@@ -50,10 +50,33 @@ if (isset($_POST['upload'])) {
                     $error_date = $line[0];
                     $error_code = $line[2];
                     $error_name = $line[3];
-                    
+
+                    //skip the row if the error code == ALM
+                    $alm = substr($error_code, 0, 3);
+                    if ($alm == "ALM") {
+                        continue;
+                    }
+
+                    $category = 'Category'; // Initialize with an empty string
+
+                    switch ($line[2]) {
+                        case 'M18045':
+                            $category = 'Feed NG';
+                            break;
+                        case 'M18051':
+                            $category = 'Left Strip NG';
+                            break;
+                        case 'M18052':
+                            $category = 'Right Strip NG';
+                            break;
+                        case in_array($line[2], ['M18255', 'M18247', 'M18253', 'M18258', 'M18261', 'M18260', 'M18056', 'M18055', 'M18236', 'M18238', 'M18237', 'M18244', 'M18239', 'M18259', 'M18241', 'M18243', 'M18254', 'M18257', 'M18263', 'M18252', 'M18242']):
+                            $category = 'Camera Error';
+                            break;
+                    }
+
                     $sam_machine = $_POST['import_machine_data'];
 
-                    $insert = "INSERT INTO sam_error(`sam_machine`, `category`, `error_code`, `error_name`, `error_date`) VALUES ('$sam_machine','Category','$error_code','$error_name','$error_date')";
+                    $insert = "INSERT INTO sam_error(`sam_machine`, `category`, `error_code`, `error_name`, `error_date`) VALUES ('$sam_machine','$category','$error_code','$error_name','$error_date')";
                     $stmt = $conn->prepare($insert);
                     $stmt->execute();
                 }
