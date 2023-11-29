@@ -32,12 +32,12 @@
                             <a href="#" class="btn btn-info" data-toggle="modal" data-target="#add_new_machine">+ Add Machine</a>
                             </div>
                             <div class="p-2"> 
-                                <input type="text" id="full_name_search" class="form-control shadow border-0"
+                                <input type="text" id="search_machine_list" class="form-control shadow border-0"
                                     autocomplete="off" placeholder="Sam Machine" />
                                 </div>
                             <div class="p-2">
                             <button class="btn btn-info shadow bg-info" id="searchReqBtn"
-                                    onclick="search_new_machine()">Search <i class="fas fa-search"></i></button>
+                                    onclick="search_machine()">Search <i class="fas fa-search"></i></button>
                             </div>
                         </div>
                         <div class="card-body table-responsive mb-5 mt-3 p-0 " style="height: 600px;">

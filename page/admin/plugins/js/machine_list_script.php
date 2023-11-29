@@ -84,6 +84,24 @@ const load_machine = () => {
     }
 
 
+    const   search_machine =()=>{
+        let search_machine_list = document.getElementById('search_machine_list').value;
+        $.ajax({
+            type: "POST",
+            url: '../../process/admin/machines/machine_p.php',
+            cache: false,
+            data:{
+                method:'search_machine',
+                search_machine_list:search_machine_list
+            },success: function (response) {
+                $('#list_of_machines').html(response);
+                $('#spinner').fadeOut();
+              
+            }
+        });
+    }
+
+
 
 
 </script>

@@ -3,7 +3,7 @@
 
 <section class="container-fluid m-0 p-0">
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper background-img">
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header bg-info">
             <div class="container-fluid">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
 
-                        <div class="card-body table-responsive m-0 mt-3 p-0 " style="height: 500px;">
+                        <div class="card-body table-responsive m-0 mt-3 p-0 " style="height: 600px;">
                             <table class="table table-bordered table-head-fixed  text-nowrap table-hover shadow-sm"
                                 id="accounts_table">
                                 <thead style="text-align:center;">

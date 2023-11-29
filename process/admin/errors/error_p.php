@@ -12,7 +12,7 @@ if ($method == 'error_list') {
     if ($stmt->rowCount() > 0) {
         foreach ($stmt as $row) {
             $c++;
-            echo '<tr style="cursor:pointer;" class="modal-trigger" data-toggle="modal" data-target="#update_account">';
+            echo '<tr>';
             echo "<td>" . $c . "</td>";
             echo "<td>" . $row["error_code"] . "</td>";
             echo "<td>" . $row["error_name"] . "</td>";
@@ -22,6 +22,30 @@ if ($method == 'error_list') {
     } else {
         echo "<td> No Result</td>";
     }
+}
+
+if ($method == 'search_error') {
+    $search_error_list = $_POST['search_error_list'];
+    $c = 0;
+
+    $query = "SELECT * FROM machine_error WHERE `error_code` LIKE '%$search_error_list%'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        foreach ($stmt->fetchAll() as $row){
+            $c++;
+            echo '<tr>';
+            echo "<td>" . $c . "</td>";
+            echo "<td>" . $row["error_code"] . "</td>";
+            echo "<td>" . $row["error_name"] . "</td>";
+            echo "<td>" . $row["category"] . "</td>";
+            echo "</tr>";
+        }
+    }else {
+		echo '<tr>';
+		echo '<td colspan="6" style="text-align:center; color:red;">No Result !!!</td>';
+		echo '</tr>';
+	}
 }
 
 ?>

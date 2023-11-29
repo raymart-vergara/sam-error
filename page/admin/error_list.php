@@ -3,7 +3,7 @@
 
 <section class="container-fluid m-0 p-0">
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper background-img">
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header bg-info">
             <div class="container-fluid">
@@ -32,15 +32,15 @@
                             <a href="#" class="btn btn-info" data-toggle="modal" data-target="#new_machine">+ Add Error</a>
                             </div>
                             <div class="p-2"> 
-                                <input type="text" id="machine_search" class="form-control shadow border-0"
+                                <input type="text" id="search_error_list" class="form-control shadow border-0"
                                     autocomplete="off" placeholder="Machine Code" />
                                 </div>
                             <div class="p-2">
                             <button class="btn btn-info shadow bg-info" id="searchReqBtn"
-                                    onclick="search_account()">Search <i class="fas fa-search"></i></button>
+                                    onclick="search_error()">Search <i class="fas fa-search"></i></button>
                             </div>
                         </div>
-                        <div class="card-body table-responsive m-0 mt-3 p-0 " style="height: 500px;">
+                        <div class="card-body table-responsive m-0 mb-5 mt-3 p-0 " style="height: 600px;">
                             <table class="table table-bordered table-head-fixed  text-nowrap table-hover shadow-sm"
                                 id="accounts_table">
                                 <thead style="text-align:center;">
