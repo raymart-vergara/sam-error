@@ -257,7 +257,7 @@
                 let Feed_NG = [];
                 let target = [];
                 for (let i = 0; i < data.length; i++) {
-                    error_date.push(data[i].error_date);
+                    error_date.push(data[i].error_date);    
                     Feed_NG.push(data[i].Feed_NG);
                     target.push(data[i].target);
                 }
