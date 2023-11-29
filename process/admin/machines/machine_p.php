@@ -12,13 +12,33 @@ if ($method == 'machine_list') {
     if ($stmt->rowCount() > 0) {
         foreach ($stmt as $row) {
             $c++;
-            echo '<tr style="cursor:pointer;" class="modal-trigger" data-toggle="modal" data-target="#update_account">';
+            echo '<tr>';
             echo "<td>" . $c . "</td>";
             echo "<td>" . $row["sam_machine"] . "</td>";
             echo "<td>" . $row["ip_address"] . "</td>";
         }
     } else {
         echo "<td> No Result</td>";
+    }
+}
+if ($method == 'register_machine_list') {
+    $sam_machine_list = trim($_POST['sam_machine_list']);
+    $sam_ip_list = trim($_POST['sam_ip_list']);
+
+    $check = "SELECT id FROM sam_machine WHERE sam_machine = '$sam_machine_list' OR  ip_address ='$sam_ip_list' ";
+    $stmt = $conn->prepare($check);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        echo 'Already Exist';
+    } else {
+        $stmt = NULL;
+        $query = "INSERT INTO sam_machine (`sam_machine`, `ip_address`)VALUES('$sam_machine_list','$sam_ip_list')";
+        $stmt = $conn->prepare($query);
+        if ($stmt->execute()) {
+            echo 'success';
+        } else {
+            echo 'error';
+        }
     }
 }
 

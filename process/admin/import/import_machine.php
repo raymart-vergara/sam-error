@@ -72,6 +72,12 @@ if (isset($_POST['upload'])) {
                         case in_array($line[2], ['M18255', 'M18247', 'M18253', 'M18258', 'M18261', 'M18260', 'M18056', 'M18055', 'M18236', 'M18238', 'M18237', 'M18244', 'M18239', 'M18259', 'M18241', 'M18243', 'M18254', 'M18257', 'M18263', 'M18252', 'M18242']):
                             $category = 'Camera Error';
                             break;
+                        case 'M18067' || 'M18069':
+                            $category = 'Mis-insertion (connector)';
+                            break;
+                        case 'M18168':
+                            $category = 'Mis-insertion (Gomusen)';
+                            break;
                     }
 
                     $sam_machine = $_POST['import_machine_data'];

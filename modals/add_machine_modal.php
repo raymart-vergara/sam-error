@@ -14,25 +14,13 @@
 
                 <div class="row mt-3">
                     <div class="col-lg-12 col-12">
-                        <input type="text" id="username" class="form-control" autocomplete="off"
-                            placeholder=" Username" />
+                        <input type="text" id="sam_machine_list" class="form-control" autocomplete="off"
+                            placeholder=" Sam Machine" />
                     </div>
                     <div class="col-lg-12 col-12 mt-3">
-                        <input type="text" id="full_name" class="form-control" autocomplete="off"
-                            placeholder=" Fullname">
+                        <input type="text" id="sam_ip_list" class="form-control" autocomplete="off"
+                            placeholder=" IP Address">
                     </div>
-                    <div class="col-lg-12 col-12 mt-3">
-                        <input type="password" id="password" class="form-control" autocomplete="off"
-                            placeholder=" Password">
-                    </div>
-                    <div class="col-lg-12 col-12 mt-3">
-                        <select id="role" class="form-control">
-                            <option value="">Select User Type</option>
-                            <option value="admin">Admin</option>
-                            <option value="user">User</option>
-                        </select>
-                    </div>
-
                 </div>
                 <br>
                 <hr>
@@ -40,7 +28,7 @@
                     <div class="col-12">
                         <div class="d-flex justify-content-center">
                             <a type="button" class="btn btn-danger mx-3" data-dismiss="modal" aria-label="Close"> Cancel</a>
-                            <a href="#" class="btn btn-info mx-3" onclick="register_accounts()">Register</a>
+                            <a href="#" class="btn btn-info mx-3" onclick="register_machine_list()">Confirm</a>
                         </div>
                     </div>
                 </div>
