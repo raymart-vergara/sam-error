@@ -29,7 +29,7 @@
                     <section class="container-lg">
                         <div class="d-flex mt-5">
                             <div class="mr-auto p-2">
-                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#new_machine">+ Add Error</a>
+                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#add_error_modal">+ Add Error</a>
                             </div>
                             <div class="p-2"> 
                                 <input type="text" id="search_error_list" class="form-control shadow border-0"
