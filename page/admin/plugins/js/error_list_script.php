@@ -18,7 +18,6 @@ const load_error = () => {
         });
     }
 
-    
     const register_error_list = () => {
         let sam_machine_list =  document.getElementById('sam_machine_list').value;
         let sam_ip_list = document.getElementById('sam_ip_list').value;
