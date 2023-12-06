@@ -24,6 +24,28 @@ if ($method == 'error_list') {
     }
 }
 
+if ($method == 'register_error_list') {
+    $error_code_list = trim($_POST['error_code_list']);
+    $error_name_list = trim($_POST['error_name_list']);
+    $error_category_list = trim($_POST['error_category_list']);
+
+    $check = "SELECT id FROM machine_error WHERE error_code = '$error_code_list' OR  error_name ='$error_name_list' ";
+    $stmt = $conn->prepare($check);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+        echo 'Already Exist';
+    } else {
+        $stmt = NULL;
+        $query = "INSERT INTO machine_error (`error_code`, `error_name`, `category`)VALUES('$error_code_list','$error_name_list', '$error_category_list')";
+        $stmt = $conn->prepare($query);
+        if ($stmt->execute()) {
+            echo 'success';
+        } else {
+            echo 'error';
+        }
+    }
+}
+
 if ($method == 'search_error') {
     $search_error_list = $_POST['search_error_list'];
     $c = 0;

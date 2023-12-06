@@ -19,21 +19,30 @@ const load_error = () => {
     }
 
     const register_error_list = () => {
-        let sam_machine_list =  document.getElementById('sam_machine_list').value;
-        let sam_ip_list = document.getElementById('sam_ip_list').value;
+        let error_code_list =  document.getElementById('error_code_list').value;
+        let error_name_list = document.getElementById('error_name_list').value;
+        let error_category_list = document.getElementById('error_category_list').value;
 
-        if (sam_machine_list == '') {
+        if (error_code_list == '') {
             Swal.fire({
                 icon: 'info',
-                title: 'Input Sam Machine !!!',
+                title: 'Input Error Machine !!!',
                 text: 'Information',
                 showConfirmButton: false,
                 timer: 1000
             });
-        } else if (sam_ip_list == '') {
+        } else if (error_name_list == '') {
             Swal.fire({
                 icon: 'info',
-                title: 'Input IP Address !!!',
+                title: 'Input Error Name !!!',
+                text: 'Information',
+                showConfirmButton: false,
+                timer: 1000
+            });
+        }  else if (error_category_list == '') {
+            Swal.fire({
+                icon: 'info',
+                title: 'Input Category !!!',
                 text: 'Information',
                 showConfirmButton: false,
                 timer: 1000
@@ -41,12 +50,13 @@ const load_error = () => {
         } else {
             $.ajax({
             type: 'POST',
-            url: '../../process/admin/machines/machine_p.php',
+            url: '../../process/admin/errors/error_p.php',
             cache: false,
             data: {
-                method: 'register_machine_list',
-                sam_machine_list : sam_machine_list,
-                sam_ip_list : sam_ip_list
+                method: 'register_error_list',
+                error_code_list : error_code_list,
+                error_name_list : error_name_list,
+                error_category_list : error_category_list
             },
             success: function (response) {
                 if (response == 'success') {
@@ -57,10 +67,11 @@ const load_error = () => {
                             showConfirmButton: false,
                             timer: 1000
                         });
-                        load_machine();
-                        $('#sam_machine_list').val('');
-                        $('#sam_ip_list').val('');
-                        $('#add_new_machine').modal('hide');
+                        load_error();
+                        $('#error_code_list').val('');
+                        $('#error_name_list').val('');
+                        $('#error_category_list').val('');
+                        $('#add_error_modal').modal('hide');
                     } else if (response == 'Already Exist') {
                         Swal.fire({
                             icon: 'error',

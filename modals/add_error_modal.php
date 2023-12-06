@@ -14,15 +14,15 @@
 
                 <div class="row mt-3">
                     <div class="col-lg-12 col-12">
-                        <input type="text" id="mac_error_name" class="form-control" autocomplete="off"
+                        <input type="text" id="error_code_list" class="form-control" autocomplete="off"
                             placeholder="Error Code" />
                     </div>
                     <div class="col-lg-12 col-12 mt-3">
-                        <input type="text" id="mac_error_code" class="form-control" autocomplete="off"
+                        <input type="text" id="error_name_list" class="form-control" autocomplete="off"
                             placeholder="Error Name">
                     </div>
                     <div class="col-lg-12 col-12 mt-3">
-                        <input type="text" id="mac_error_category" class="form-control" autocomplete="off"
+                        <input type="text" id="error_category_list" class="form-control" autocomplete="off"
                             placeholder="Category">
                     </div>
                     
@@ -33,7 +33,7 @@
                     <div class="col-12">
                         <div class="d-flex justify-content-center">
                             <a type="button" class="btn btn-danger mx-3" data-dismiss="modal" aria-label="Close"> Cancel</a>
-                            <a href="#" class="btn btn-info mx-3" onclick="register_machine_list()">Confirm</a>
+                            <a href="#" class="btn btn-info mx-3" onclick="register_error_list()">Confirm</a>
                         </div>
                     </div>
                 </div>

@@ -29,24 +29,25 @@
                     <section class="container-lg">
                         <div class="d-flex mt-4">
                             <div class="p-2">
-                            <a href="#" class="btn btn-secondary shadow" data-toggle="modal" data-target="#import_error_data"> Import Machine </a>
+                                <a href="#" class="btn btn-secondary shadow" data-toggle="modal"
+                                    data-target="#import_error_data"> Import Machine </a>
                             </div>
                             <div class="mr-auto p-2">
-                                <a href="#" class="btn btn-info shadow" data-toggle="modal" data-target="#target_data_modal">+
+                                <a href="#" class="btn btn-info shadow" data-toggle="modal"
+                                    data-target="#target_data_modal">+
                                     Add Target </a>
                             </div>
                             <div class="p-2 col-2">
-                                <input type="date" id="date_from_search" class="form-control  border-info shadow" style="background:none;"  autocomplete="off"
-                                    onchange="fitler_all()" />
+                                <input type="date" id="date_from_search" class="form-control  border-info shadow"
+                                    style="background:none;" autocomplete="off" onchange="fitler_all()" />
                             </div>
                             <div class="p-2 col-2">
-                                <input type="date" id="date_to_search" class="form-control  border-info shadow" style="background:none;" autocomplete="off"
-                                    onchange="fitler_all()">
+                                <input type="date" id="date_to_search" class="form-control  border-info shadow"
+                                    style="background:none;" autocomplete="off" onchange="fitler_all()">
                             </div>
                             <div class="p-2 col-2">
                                 <select name="sam_machine_data" id="sam_machine_data" autocomplete="off"
-                                    onchange="fitler_all()"
-                                    class="pl-2 form-control btn bg-info shadow" required>
+                                    onchange="fitler_all()" class="pl-2 form-control btn bg-info shadow" required>
                                     <!-- <option>Select Machine</option> -->
                                 </select>
                             </div>
@@ -54,15 +55,15 @@
 
                         <div class="container-lg my-4 mb-5">
                             <div class="row">
-                                <div class="col-lg-6 col-12">
-                                    <div class="card rounded shadow"  >
+                                <div class="col-6">
+                                    <div class="card rounded shadow">
                                         <div id="chart-container">
                                             <canvas id="feed_ng_chart"></canvas>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-12">
-                                    <div class="card rounded shadow" >
+                                <div class="col-6">
+                                    <div class="card rounded shadow">
                                         <div id="chart-container">
                                             <canvas id="right_strip_chart"></canvas>
                                         </div>
@@ -70,14 +71,14 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-6 col-12">
-                                    <div class="card rounded shadow" >
+                                <div class="col-6">
+                                    <div class="card rounded shadow">
                                         <div id="chart-container">
                                             <canvas id="left_strip_chart"></canvas>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-12">
+                                <div class="col-6">
                                     <div class="card rounded shadow">
                                         <div id="chart-container">
                                             <canvas id="camera_chart"></canvas>
