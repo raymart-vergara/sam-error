@@ -3,23 +3,9 @@
     let right_strip; // define chart variable outside of function
     let left_strip; // define chart variable outside of function
     let camera;
-
     $(document).ready(function () {
         fetch_opt_sam_machine_data();
         fitler_all();
-        
-        $("#import_machine_btn").click(function () {
-            $('#import_error_data').modal('hide');
-            Swal.fire({
-                            icon: 'info',
-                            title: 'Please Wait!!',
-                            text: '',
-                            showConfirmButton: false,
-                            allowOutsideClick:false,
-                            allowEscapeKey:false,
-                            allowEnterKey:false
-                        });
-        });
     });
 
     const fitler_all = () => {
@@ -28,6 +14,31 @@
         left_strip_ng();
         camera_ng();
     }
+const import_machine_func = () =>{
+    let import_machine_data = document.getElementById('import_machine_data').value;
+    if (import_machine_data === '') {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Select Machine !!!',
+                    text: 'Information',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            } else {
+                $('#import_error_data').modal('hide');
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Please Wait!!',
+                    text: '',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false
+                });
+            }
+}
+    
+
 
     const fetch_opt_sam_machine_data = () => {
         $.ajax({
@@ -81,20 +92,20 @@
                         labels: error_date,
                         datasets: [
                             {
-                            label: 'Target',
-                            backgroundColor: 'rgba(23,162,184)',
-                            borderColor: 'rgba(23,162,184)',
-                            type: 'line',
-                            borderWidth: 2,
-                            data: target,
-                        },{
-                            label: 'Feed NG',
-                            backgroundColor: 'rgba(255, 99, 132)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1,
-                            data: Feed_NG,
-                        }
-                       ],
+                                label: 'Target',
+                                backgroundColor: 'rgba(23,162,184)',
+                                borderColor: 'rgba(23,162,184)',
+                                type: 'line',
+                                borderWidth: 2,
+                                data: target,
+                            }, {
+                                label: 'Feed NG',
+                                backgroundColor: 'rgba(255, 99, 132)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                data: Feed_NG,
+                            }
+                        ],
                     },
                 }
 
@@ -145,21 +156,21 @@
                     data: {
                         labels: error_date,
                         datasets: [
-                        {
-                            label: 'Target',
-                            backgroundColor: 'rgba(23,162,184)',
-                            borderColor: 'rgba(23,162,184)',
-                            type: 'line',
-                            borderWidth: 2,
-                            data: target,
-                        },
-                        {
-                            label: 'Right Strip NG',
-                            backgroundColor: 'rgba(255, 99, 132)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1,
-                            data: Feed_NG,
-                        }],
+                            {
+                                label: 'Target',
+                                backgroundColor: 'rgba(23,162,184)',
+                                borderColor: 'rgba(23,162,184)',
+                                type: 'line',
+                                borderWidth: 2,
+                                data: target,
+                            },
+                            {
+                                label: 'Right Strip NG',
+                                backgroundColor: 'rgba(255, 99, 132)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                data: Feed_NG,
+                            }],
                     },
                 }
 
@@ -209,20 +220,20 @@
                         labels: error_date,
                         datasets: [
                             {
-                            label: 'Target',
-                            backgroundColor: 'rgba(23,162,184)',
-                            borderColor: 'rgba(23,162,184)',
-                            type: 'line',
-                            borderWidth: 2,
-                            data: target,
-                        },
-                        {
-                            label: 'Left Strip NG',
-                            backgroundColor: 'rgba(255, 99, 132)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1,
-                            data: Feed_NG,
-                        }
+                                label: 'Target',
+                                backgroundColor: 'rgba(23,162,184)',
+                                borderColor: 'rgba(23,162,184)',
+                                type: 'line',
+                                borderWidth: 2,
+                                data: target,
+                            },
+                            {
+                                label: 'Left Strip NG',
+                                backgroundColor: 'rgba(255, 99, 132)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                data: Feed_NG,
+                            }
                         ],
                     },
                 }
@@ -257,7 +268,7 @@
                 let Feed_NG = [];
                 let target = [];
                 for (let i = 0; i < data.length; i++) {
-                    error_date.push(data[i].error_date);    
+                    error_date.push(data[i].error_date);
                     Feed_NG.push(data[i].Feed_NG);
                     target.push(data[i].target);
                 }
@@ -272,21 +283,21 @@
                     data: {
                         labels: error_date,
                         datasets: [
-                        {
-                            label: 'Target',
-                            backgroundColor: 'rgba(23,162,184)',
-                            borderColor: 'rgba(23,162,184)',
-                            type: 'line',
-                            borderWidth: 2,
-                            data: target,
-                        },
-                        {
-                            label: 'Camera NG',
-                            backgroundColor: 'rgba(255, 99, 132)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1,
-                            data: Feed_NG,
-                        }],
+                            {
+                                label: 'Target',
+                                backgroundColor: 'rgba(23,162,184)',
+                                borderColor: 'rgba(23,162,184)',
+                                type: 'line',
+                                borderWidth: 2,
+                                data: target,
+                            },
+                            {
+                                label: 'Camera NG',
+                                backgroundColor: 'rgba(255, 99, 132)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                data: Feed_NG,
+                            }],
                     },
                 }
                 if (camera) {
@@ -374,6 +385,4 @@
             });
         }
     }
-
-
 </script>

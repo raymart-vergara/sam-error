@@ -13,14 +13,14 @@
           <div class="row">
             <select name="import_machine_data" id="import_machine_data" autocomplete="off" onchange="fitler_all()"
               class="pl-2 form-control btn bg-secondary shadow mb-3" required>
-              <!-- <option>Select Machine</option> -->
+              <option value = " ">Select Machine</option>
             </select>
             <input type="file" name="file" class="form-control-md text-center" accept=".csv">
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" class="close" data-dismiss="modal">Close</button>
-          <input type="submit" class="btn btn-info" name="upload" value="Upload" id="import_machine_btn">
+          <input type="submit" class="btn btn-info" name="upload" value="Upload" id="import_machine_btn" onclick="import_machine_func()">
         </div>
       </form>
     </div>
