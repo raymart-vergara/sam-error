@@ -32,10 +32,15 @@
                                 <a href="#" class="btn btn-secondary shadow" data-toggle="modal"
                                     data-target="#import_error_data"> Import Machine </a>
                             </div>
-                            <div class="mr-auto p-2">
+                            <div class="p-2">
                                 <a href="#" class="btn btn-info shadow" data-toggle="modal"
                                     data-target="#target_data_modal">+
                                     Add Target </a>
+                            </div>
+                            <div class="mr-auto p-2">
+                                <a href="#" class="btn btn-danger shadow" data-toggle="modal"
+                                    data-target="#delete_data_modal">
+                                    Delete Error </a>
                             </div>
                             <div class="p-2 col-2">
                                 <input type="date" id="date_from_search" class="form-control  border-info shadow"
