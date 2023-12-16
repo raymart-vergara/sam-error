@@ -52,6 +52,7 @@ const import_machine_func = () =>{
                 $('#sam_machine_data').html(response);
                 $('#input_sam_machine').html(response);
                 $('#import_machine_data').html(response);
+                $('#delete_sam_machine').html(response);
             }
         });
     }
@@ -385,4 +386,72 @@ const import_machine_func = () =>{
             });
         }
     }
+
+const delete_sam_error = () => {
+    let delete_sam_machine = document.getElementById('delete_sam_machine').value;
+        let delete_date_from = document.getElementById('delete_date_from').value;
+        let delete_date_to = document.getElementById('delete_date_to').value;
+
+        if (delete_sam_machine == '') {
+            Swal.fire({
+                icon: 'info',
+                title: 'Please Input SAM Machine !!!',
+                text: 'Information',
+                showConfirmButton: false,
+                timer: 1000
+            });
+        } else if (delete_date_from == '') {
+            Swal.fire({
+                icon: 'info',
+                title: 'Please Input Date From  !!!',
+                text: 'Information',
+                showConfirmButton: false,
+                timer: 1000
+            });
+        } else if (delete_date_to == '') {
+            Swal.fire({
+                icon: 'info',
+                title: 'Please Input Date To !!!',
+                text: 'Information',
+                showConfirmButton: false,
+                timer: 1000
+            });
+        }else{
+            $.ajax({
+                type: "POST",
+                url: '../../process/admin/dashboard/dashboard_p.php',
+                cache: false,
+                data: {
+                    method: 'delete_sam_error',
+                    delete_sam_machine: delete_sam_machine,
+                    delete_date_from: delete_date_from,
+                    delete_date_to: delete_date_to
+                }, success: function (response) {
+                    if (response == 'success') {
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Succesfully Deleted !!!',
+                            text: 'Information',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                        $('#delete_data_modal').modal('hide');
+                        fitler_all();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error !!!',
+                            text: 'Error',
+                            showConfirmButton: false,
+                            timer: 1000
+                        });
+                    }
+                }
+            });
+        } 
+
+}
+
+
+
 </script>

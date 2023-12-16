@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <input type="button" value="Delete Error" class="btn btn-danger col-sm-12"  onclick="update_target()">
+          <input type="button" value="Delete Error" class="btn btn-danger col-sm-12"  onclick="delete_sam_error()">
         </div>
       </div>
     </div>

@@ -115,18 +115,44 @@ if ($method == 'camera_ng') {
 }
 
 if ($method == 'update_target') {
+   // Trim input and prevent SQL injection using prepared statements
    $input_sam_machine = trim($_POST['input_sam_machine']);
    $input_target = trim($_POST['input_target']);
    $input_date_from = trim($_POST['input_date_from']);
    $input_date_to = trim($_POST['input_date_to']);
-   $query = "UPDATE sam_error SET `target` ='$input_target'  WHERE  sam_machine = '$input_sam_machine' AND (error_date >= '$input_date_from 00:00:00' AND error_date <= '$input_date_to 23:59:59')";
+
+   // Use prepared statements to avoid SQL injection
+   $query = "UPDATE sam_error SET `target` = :input_target WHERE sam_machine = :input_sam_machine AND (error_date BETWEEN :input_date_from AND :input_date_to)";
    $stmt = $conn->prepare($query);
+
+   // Bind parameters
+   $stmt->bindParam(':input_sam_machine', $input_sam_machine, PDO::PARAM_STR);
+   $stmt->bindParam(':input_target', $input_target, PDO::PARAM_STR);
+   $stmt->bindParam(':input_date_from', $input_date_from, PDO::PARAM_STR);
+   $stmt->bindParam(':input_date_to', $input_date_to, PDO::PARAM_STR);
+
+   // Execute the query
+   if ($stmt->execute()) {
+       echo "success";
+   } else {
+       echo "error";
+   }
+}
+
+
+if($method == 'delete_sam_error'){
+   $delete_sam_machine = trim($_POST['delete_sam_machine']);
+   $delete_date_from = trim($_POST['delete_date_from']);
+   $delete_date_to = trim($_POST['delete_date_to']);
+
+   $query = "DELETE FROM `sam_error` WHERE `sam_machine` = '$delete_sam_machine' AND error_date BETWEEN '$delete_date_from 00:00:00' AND '$delete_date_to 23:59:59'";
+   $stmt = $conn->prepare($query);
+   // Execute the query
    if ($stmt->execute()) {
       echo "success";
-   } else {
+  } else {
       echo "error";
-   }
-
+  }
 }
 
 
