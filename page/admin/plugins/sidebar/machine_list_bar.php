@@ -50,6 +50,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="sam_charts.php" class="nav-link">
+          <i class="nav-icon fas fa-chart-bar"></i>
+            <p>
+             Sam Charts
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="accounts.php" class="nav-link">
             <i class="nav-icon fas fa-user-cog"></i>
             <p>

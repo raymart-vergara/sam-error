@@ -50,7 +50,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="sam_charts.php" class="nav-link">
+          <a href="sam_charts.php" class="active bg-info nav-link">
           <i class="nav-icon fas fa-chart-bar"></i>
             <p>
              Sam Charts
@@ -58,7 +58,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="accounts.php" class="nav-link active bg-info">
+          <a href="accounts.php" class="nav-link">
             <i class="nav-icon fas fa-user-cog"></i>
             <p>
               Account Management

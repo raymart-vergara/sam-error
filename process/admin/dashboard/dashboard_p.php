@@ -121,15 +121,8 @@ if ($method == 'update_target') {
    $input_date_from = trim($_POST['input_date_from']);
    $input_date_to = trim($_POST['input_date_to']);
 
-   // Use prepared statements to avoid SQL injection
-   $query = "UPDATE sam_error SET `target` = :input_target WHERE sam_machine = :input_sam_machine AND (error_date BETWEEN :input_date_from AND :input_date_to)";
+   $query = "UPDATE sam_error SET `target` = '$input_target' WHERE sam_machine = '$input_sam_machine' AND (error_date BETWEEN '$input_date_from 00:00:00'AND '$input_date_to 23:59:59' )";
    $stmt = $conn->prepare($query);
-
-   // Bind parameters
-   $stmt->bindParam(':input_sam_machine', $input_sam_machine, PDO::PARAM_STR);
-   $stmt->bindParam(':input_target', $input_target, PDO::PARAM_STR);
-   $stmt->bindParam(':input_date_from', $input_date_from, PDO::PARAM_STR);
-   $stmt->bindParam(':input_date_to', $input_date_to, PDO::PARAM_STR);
 
    // Execute the query
    if ($stmt->execute()) {

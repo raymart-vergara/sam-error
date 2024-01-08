@@ -4,6 +4,7 @@ include("../../conn.php");
 $method = $_POST['method'];
 
 if ($method == 'account_list') {
+    $server_time_a = date('h:i:s A');
     $c = 0;
     $query = "SELECT * FROM users_account";
     $stmt = $conn->prepare($query);
