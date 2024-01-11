@@ -29,77 +29,49 @@
                     <section class="container-lg">
                         <div class="d-flex mt-4">
                             <div class="p-2">
-                                <a href="#" class="btn btn-secondary shadow" data-toggle="modal"
-                                    data-target="#import_error_data"> Import Machine </a>
+                                <!-- <a href="#" class="btn btn-secondary shadow" data-toggle="modal"
+                                    data-target="#import_error_data"> </a> -->
                             </div>
                             <div class="p-2">
-                                <a href="#" class="btn btn-info shadow" data-toggle="modal"
+                                <!-- <a href="#" class="btn btn-info shadow" data-toggle="modal"
                                     data-target="#target_data_modal">+
-                                    Add Target </a>
+                                    Add Target </a> -->
                             </div>
                             <div class="mr-auto p-2">
-                                <a href="#" class="btn btn-danger shadow" data-toggle="modal"
+                                <!-- <a href="#" class="btn btn-danger shadow" data-toggle="modal"
                                     data-target="#delete_data_modal">
-                                    Delete Error </a>
+                                    Delete Error </a> -->
                             </div>
-                            <div class="p-2 col-2">
+                            <div class="p-2 col-3">
                                 <input type="date" id="date_from_search" class="form-control  border-info shadow"
                                     style="background:none;" autocomplete="off" onchange="fitler_all()" />
                             </div>
-                            <div class="p-2 col-2">
+                            <div class="p-2 col-3">
                                 <input type="date" id="date_to_search" class="form-control  border-info shadow"
                                     style="background:none;" autocomplete="off" onchange="fitler_all()">
                             </div>
-                            <div class="p-2 col-2">
-                                <select name="sam_machine_data" id="sam_machine_data" autocomplete="off"
-                                    onchange="fitler_all()" class="pl-2 form-control btn bg-info shadow" required>
+                            <div class="p-2 col-3">
+                                <select name="sam_machine_data" id="category" autocomplete="off" onchange="fitler_all()"
+                                    class="pl-2 form-control btn bg-info shadow" required>
                                     <!-- <option>Select Machine</option> -->
                                 </select>
                             </div>
                         </div>
 
-                        <div class="container-lg my-4 mb-5">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="card rounded shadow">
-                                        <div id="chart-container">
-                                            <canvas id="feed_ng_chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="card rounded shadow">
-                                        <div id="chart-container">
-                                            <canvas id="right_strip_chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="card rounded shadow">
-                                        <div id="chart-container">
-                                            <canvas id="left_strip_chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="card rounded shadow">
-                                        <div id="chart-container">
-                                            <canvas id="camera_chart"></canvas>
-                                        </div>
+                        <div class="container-fluid my-4 mb-5">
+                            <div class="col-12">
+                                <div class="card rounded shadow">
+                                    <div id="chart-container">
+                                        <canvas id="all_feed_ng_chart"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.card-body -->
-                    </section>
                 </div>
-                <!-- /.card -->
+                <!-- /.card-body -->
             </div>
         </div>
-        <!-- /.row -->
     </div>
 </section>
 <?php include 'plugins/footer.php'; ?>
-<?php include 'plugins/js/dashboard_script.php'; ?>
+<?php include 'plugins/js/sam_charts_script.php'; ?>

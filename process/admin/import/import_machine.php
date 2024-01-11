@@ -47,7 +47,7 @@ if (isset($_POST['upload'])) {
                     }
 
                     $error_date = $line[0];
-                    $error_code = $line[2];
+                    $error_code = trim($line[2]);
                     $error_name = $line[3];
 
                     //skip the row if the error code == ALM
@@ -56,7 +56,7 @@ if (isset($_POST['upload'])) {
                         if ($alm == "ALM") {
                             continue;
                         }
-
+                        
                         $category = 'Category'; // Initialize with a default value
 
                         switch ($line[2]) {
@@ -80,19 +80,22 @@ if (isset($_POST['upload'])) {
                                 $category = 'Mis-insertion (Gomusen)';
                                 break;
                         }
+                        
+                        $sam_machine = $_POST['import_machine_data'];
+
+                        // Use prepared statements for SQL queries
+                        $insert = "INSERT INTO sam_error(`sam_machine`, `category`, `error_code`, `error_name`, `error_date`) VALUES (:sam_machine, :category, :error_code, :error_name, :error_date)";
+                        $stmt = $conn->prepare($insert);
+                        $stmt->bindParam(':sam_machine', $sam_machine, PDO::PARAM_STR);
+                        $stmt->bindParam(':category', $category, PDO::PARAM_STR);
+                        $stmt->bindParam(':error_code', $error_code, PDO::PARAM_STR);
+                        $stmt->bindParam(':error_name', $error_name, PDO::PARAM_STR);
+                        $stmt->bindParam(':error_date', $error_date, PDO::PARAM_STR);
+                        $stmt->execute();
+
                     }
 
-                    $sam_machine = $_POST['import_machine_data'];
-
-                    // Use prepared statements for SQL queries
-                    $insert = "INSERT INTO sam_error(`sam_machine`, `category`, `error_code`, `error_name`, `error_date`) VALUES (:sam_machine, :category, :error_code, :error_name, :error_date)";
-                    $stmt = $conn->prepare($insert);
-                    $stmt->bindParam(':sam_machine', $sam_machine, PDO::PARAM_STR);
-                    $stmt->bindParam(':category', $category, PDO::PARAM_STR);
-                    $stmt->bindParam(':error_code', $error_code, PDO::PARAM_STR);
-                    $stmt->bindParam(':error_name', $error_name, PDO::PARAM_STR);
-                    $stmt->bindParam(':error_date', $error_date, PDO::PARAM_STR);
-                    $stmt->execute();
+                    
                 }
 
                 // Commit the transaction
