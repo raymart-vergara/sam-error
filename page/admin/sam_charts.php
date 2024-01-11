@@ -43,14 +43,17 @@
                                     Delete Error </a> -->
                             </div>
                             <div class="p-2 col-3">
+                                <label for="date_from_search">Date From:</label>
                                 <input type="date" id="date_from_search" class="form-control  border-info shadow"
                                     style="background:none;" autocomplete="off" onchange="fitler_all()" />
                             </div>
                             <div class="p-2 col-3">
+                                <label for="date_to_search">Date To:</label>
                                 <input type="date" id="date_to_search" class="form-control  border-info shadow"
                                     style="background:none;" autocomplete="off" onchange="fitler_all()">
                             </div>
                             <div class="p-2 col-3">
+                                <label for="sam_machine_data">&nbsp </label>
                                 <select name="sam_machine_data" id="category" autocomplete="off" onchange="fitler_all()"
                                     class="pl-2 form-control btn bg-info shadow" required>
                                     <!-- <option>Select Machine</option> -->
