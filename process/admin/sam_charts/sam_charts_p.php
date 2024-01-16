@@ -21,17 +21,13 @@ if ($method == 'fetch_opt_sam_machine_data') {
 
 
 if ($method == 'all_machine_ng') {
-   $date_from_search = $_POST['date_from_search'];
-   $date_to_search = $_POST['date_to_search'];
+   $all_date_from_search = $_POST['all_date_from_search'];
+   $all_date_to_search = $_POST['all_date_to_search'];
    $category = $_POST['category'];
    // $check = "SELECT DATE(error_date) AS error_date , `target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code='M18045' AND sam_machine = '$sam_machine_data'  AND (error_date >= '$date_from_search 00:00:00' AND error_date <= '$date_to_search 23:59:59') GROUP BY DATE(error_date)";
    $check = "SELECT sam_machine, category, COUNT(*) AS totalCount,`target`, `error_date`
-   FROM sam_error WHERE (error_date BETWEEN '$date_from_search 00:00:00'AND '$date_to_search 23:59:59' ) AND `category` ='$category' GROUP BY sam_machine ORDER BY 
-     CASE
-       WHEN sam_machine LIKE 'SAM%' THEN LPAD(sam_machine, 10, '0')
-       WHEN sam_machine LIKE 'NSC-%' THEN CONCAT('Z', sam_machine)
-       ELSE sam_machine
-     END;";
+   FROM sam_error WHERE (error_date BETWEEN '$all_date_from_search 00:00:00'AND '$all_date_to_search 23:59:59' ) AND `category` ='$category' GROUP BY sam_machine ORDER BY 
+   totalCount DESC";
    $stmt = $conn->prepare($check);
    $stmt->execute();
 

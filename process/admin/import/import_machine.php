@@ -73,8 +73,7 @@ if (isset($_POST['upload'])) {
                                 $category = 'Camera Error';
                                 break;
                             case 'M18067':
-                            case 'M18069':
-                                $category = 'Mis-insertion (connector)';
+                                $category = 'Ins Right Pull NG';
                                 break;
                             case 'M18168':
                                 $category = 'Mis-insertion (Gomusen)';

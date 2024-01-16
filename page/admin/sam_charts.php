@@ -27,30 +27,21 @@
                 <div class="card" style="background:white;">
                     <!-- /.card-header -->
                     <section class="container-lg">
-                        <div class="d-flex mt-4">
-                            <div class="p-2">
-                                <!-- <a href="#" class="btn btn-secondary shadow" data-toggle="modal"
-                                    data-target="#import_error_data"> </a> -->
-                            </div>
-                            <div class="p-2">
-                                <!-- <a href="#" class="btn btn-info shadow" data-toggle="modal"
-                                    data-target="#target_data_modal">+
-                                    Add Target </a> -->
-                            </div>
-                            <div class="mr-auto p-2">
-                                <!-- <a href="#" class="btn btn-danger shadow" data-toggle="modal"
-                                    data-target="#delete_data_modal">
-                                    Delete Error </a> -->
+                        <div class=" d-flex align-items-end mt-4">
+                            <div class="p-2 col-3">
+                               <a href="#" class="btn btn-info shadow" data-toggle="modal"
+                                    data-target="#m_target_data_modal">+
+                                    Add Target </a>
                             </div>
                             <div class="p-2 col-3">
-                                <label for="date_from_search">Date From:</label>
-                                <input type="date" id="date_from_search" class="form-control  border-info shadow"
-                                    style="background:none;" autocomplete="off" onchange="fitler_all()" />
+                                <label for="all_date_from_search">Date From:</label>
+                                <input type="date" id="all_date_from_search" class="form-control  border-info shadow"
+                                    autocomplete="off" onchange="fitler_all()" />
                             </div>
                             <div class="p-2 col-3">
                                 <label for="date_to_search">Date To:</label>
-                                <input type="date" id="date_to_search" class="form-control  border-info shadow"
-                                    style="background:none;" autocomplete="off" onchange="fitler_all()">
+                                <input type="date" id="all_date_to_search" class="form-control  border-info shadow"
+                                    autocomplete="off" onchange="fitler_all()">
                             </div>
                             <div class="p-2 col-3">
                                 <label for="sam_machine_data">&nbsp </label>
@@ -60,12 +51,12 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="container-fluid my-4 mb-5">
-                            <div class="col-12">
+                            <div class="col-12 p-0">
                                 <div class="card rounded shadow">
                                     <div id="chart-container">
-                                        <canvas id="all_feed_ng_chart"></canvas>
+                                        <canvas id="all_feed_ng_chart"
+                                            style="position: relative; height: 25vh; width:80vw"></canvas>
                                     </div>
                                 </div>
                             </div>

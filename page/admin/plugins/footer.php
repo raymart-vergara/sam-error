@@ -11,6 +11,7 @@ include '../../modals/logout_modal.php';
 include '../../modals/new_account.php';
 include '../../modals/update_account.php';
 include '../../modals/target_data_modal.php';
+include '../../modals/m_target_data_modal.php';
 include '../../modals/add_machine_modal.php';
 include '../../modals/add_error_modal.php';
 include '../../modals//import/import_error_data_modal.php';
