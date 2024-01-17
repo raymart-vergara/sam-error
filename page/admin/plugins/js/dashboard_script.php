@@ -101,8 +101,8 @@ const import_machine_func = () =>{
                                 data: target,
                             }, {
                                 label: 'Feed NG',
-                                backgroundColor: 'rgba(23, 162, 184, 1)',
-                                borderColor: 'rgba(213, 213, 213, 1)',
+                                backgroundColor: 'rgba(23, 162, 184, 0.5)',
+                                borderColor: 'rgba(23, 162, 184, 1)',
                                 borderWidth: 1,
                                 data: Feed_NG,
                             }
@@ -167,8 +167,8 @@ const import_machine_func = () =>{
                             },
                             {
                                 label: 'Right Strip NG',
-                                backgroundColor: 'rgba(213, 213, 213, 1)',
-                                borderColor: 'rgba(213, 213, 213, 1)',
+                                backgroundColor: 'rgba(23, 162, 184, 0.5)',
+                                borderColor: 'rgba(23, 162, 184, 1)',
                                 borderWidth: 1,
                                 data: Feed_NG,
                             }],
@@ -230,8 +230,8 @@ const import_machine_func = () =>{
                             },
                             {
                                 label: 'Left Strip NG',
-                                backgroundColor: 'rgba(213, 213, 213, 1)',
-                                borderColor: 'rgba(213, 213, 213, 1)',
+                                backgroundColor: 'rgba(23, 162, 184, 0.5)',
+                                borderColor: 'rgba(23, 162, 184, 1)',
                                 borderWidth: 1,
                                 data: Feed_NG,
                             }
@@ -294,8 +294,8 @@ const import_machine_func = () =>{
                             },
                             {
                                 label: 'Camera NG',
-                                backgroundColor: 'rgba(213, 213, 213, 1)',
-                                borderColor: 'rgba(213, 213, 213, 1)',
+                                backgroundColor: 'rgba(23, 162, 184, 0.5)',
+                                borderColor: 'rgba(23, 162, 184, 1)',
                                 borderWidth: 1,
                                 data: Feed_NG,
                             }],

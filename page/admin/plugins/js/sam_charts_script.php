@@ -48,7 +48,7 @@
                 for (let i = 0; i < data.length; i++) {
                     error_date.push(data[i].sam_machine);
                     Feed_NG.push(data[i].totalCount);
-                    target.push(data[i].target);
+                    target.push(data[i].m_target);
                     category.push(data[i].category);
                 }
 
@@ -88,7 +88,7 @@
                                 data: target,
                             }, {
                                 label: category[0],
-                                backgroundColor: 'rgba(23, 162, 184, 0.8)',
+                                backgroundColor: 'rgba(23, 162, 184, 0.5)',
                                 borderColor: 'rgba(23, 162, 184, 1)',
                                 borderWidth: 1,
                                 data: Feed_NG,
@@ -108,6 +108,63 @@
         });
 
     }
+
+    const m_update_target = async () => {
+    let m_input_target = document.getElementById('m_input_target').value;
+    let m_input_date_from = document.getElementById('m_input_date_from').value;
+    let m_input_date_to = document.getElementById('m_input_date_to').value;
+
+    const showError = (message) => {
+        Swal.fire({
+            icon: 'info',
+            title: message,
+            text: 'Information',
+            showConfirmButton: false,
+            timer: 1000
+        });
+    };
+
+    if (!m_input_target) {
+        showError('Please Input Target !!!');
+    } else if (!m_input_date_from) {
+        showError('Please Input Date From !!!');
+    } else if (!m_input_date_to) {
+        showError('Please Input Date To !!!');
+    } else {
+        try {
+            const response = await $.ajax({
+                type: 'POST',
+                url: '../../process/admin/sam_charts/sam_charts_p.php',
+                cache: false,
+                data: {
+                    method: 'm_update_target',
+                    m_input_target,
+                    m_input_date_from,
+                    m_input_date_to
+                }
+            });
+
+            if (response.trim() === 'success') {
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Successfully Recorded !!!',
+                    text: 'Information',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+
+                $('#m_target_data_modal').modal('hide');
+                $('#m_input_target').val('');
+                fitler_all();
+            } else {
+                throw new Error('Error !!!');
+            }
+        } catch (error) {
+            showError('Error !!!');
+        }
+    }
+};
+
 
     // const right_strip_ng = () => {
     //     let date_from_search = document.getElementById('date_from_search').value;
@@ -300,80 +357,7 @@
     //     });
     // }
 
-    //     const update_target = () => {
-    //         let input_sam_machine = document.getElementById('input_sam_machine').value;
-    //         let input_target = document.getElementById('input_target').value;
-    //         let input_date_from = document.getElementById('input_date_from').value;
-    //         let input_date_to = document.getElementById('input_date_to').value;
-
-    //         if (input_sam_machine == '') {
-    //             Swal.fire({
-    //                 icon: 'info',
-    //                 title: 'Please Input SAM Machine !!!',
-    //                 text: 'Information',
-    //                 showConfirmButton: false,
-    //                 timer: 1000
-    //             });
-    //         } else if (input_target == '') {
-    //             Swal.fire({
-    //                 icon: 'info',
-    //                 title: 'Please Input Target !!!',
-    //                 text: 'Information',
-    //                 showConfirmButton: false,
-    //                 timer: 1000
-    //             });
-    //         } else if (input_date_from == '') {
-    //             Swal.fire({
-    //                 icon: 'info',
-    //                 title: 'Please Input Date From !!!',
-    //                 text: 'Information',
-    //                 showConfirmButton: false,
-    //                 timer: 1000
-    //             });
-    //         } else if (input_date_to == '') {
-    //             Swal.fire({
-    //                 icon: 'info',
-    //                 title: 'Please Input Date To !!!',
-    //                 text: 'Information',
-    //                 showConfirmButton: false,
-    //                 timer: 1000
-    //             });
-    //         } else {
-    //             $.ajax({
-    //                 type: "POST",
-    //                 url: '../../process/admin/dashboard/dashboard_p.php',
-    //                 cache: false,
-    //                 data: {
-    //                     method: 'update_target',
-    //                     input_sam_machine: input_sam_machine,
-    //                     input_target: input_target,
-    //                     input_date_from: input_date_from,
-    //                     input_date_to: input_date_to
-    //                 }, success: function (response) {
-    //                     if (response == 'success') {
-    //                         Swal.fire({
-    //                             icon: 'info',
-    //                             title: 'Succesfully Recorded !!!',
-    //                             text: 'Information',
-    //                             showConfirmButton: false,
-    //                             timer: 1000
-    //                         });
-    //                         $('#target_data_modal').modal('hide');
-    //                         $('#input_target').val('');
-    //                         fitler_all();
-    //                     } else {
-    //                         Swal.fire({
-    //                             icon: 'error',
-    //                             title: 'Error !!!',
-    //                             text: 'Error',
-    //                             showConfirmButton: false,
-    //                             timer: 1000
-    //                         });
-    //                     }
-    //                 }
-    //             });
-    //         }
-    //     }
+   
 
     // const delete_sam_error = () => {
     //     let delete_sam_machine = document.getElementById('delete_sam_machine').value;

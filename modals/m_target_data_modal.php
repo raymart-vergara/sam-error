@@ -15,29 +15,23 @@
             <form action="">
               <div class="row mb-3">
                 <div class="col-12">
-                  <select name="input_sam_machine" id="input_sam_machine" autocomplete="off"
-                    class="form-control btn bg-secondary shadow mb-3" required>
-                    <!-- <option>Select Machine</option> -->
-                  </select>
-                </div>
-                <div class="col-12">
-                  <input type="number" id="input_target" class="form-control" autocomplete="off"
+                  <input type="number" id="m_input_target" class="form-control" autocomplete="off"
                     placeholder="Input Target">
                 </div>
               </div>
               <div class="row mb-3">
                 <div class="col-lg-12 mb-3">
-                  <input type="date" id="input_date_from" class="form-control" autocomplete="off">
+                  <input type="date" id="m_input_date_from" class="form-control" autocomplete="off">
                 </div>
                 <div class="col-lg-12">
-                  <input type="date" id="input_date_to" class="form-control" autocomplete="off">
+                  <input type="date" id="m_input_date_to" class="form-control" autocomplete="off">
                 </div>
               </div>
             </form>
           </div>
         </div>
         <div class="modal-footer">
-          <input type="button" value="Add Target" class="btn btn-info col-sm-12"  onclick="update_target()">
+          <input type="button" value="Add Target" class="btn btn-info col-sm-12"  onclick="m_update_target()">
         </div>
       </div>
     </div>
