@@ -58,6 +58,14 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="hourly_charts.php" class="nav-link">
+          <i class="nav-icon fas fa-chart-bar"></i>
+            <p>
+             Hourly Chart
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="accounts.php" class="nav-link">
             <i class="nav-icon fas fa-user-cog"></i>
             <p>

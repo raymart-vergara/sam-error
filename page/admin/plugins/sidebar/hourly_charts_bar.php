@@ -50,7 +50,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="sam_charts.php" class="active bg-info nav-link">
+          <a href="sam_charts.php" class="nav-link">
           <i class="nav-icon fas fa-chart-bar"></i>
             <p>
              Sam Charts
@@ -58,7 +58,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="hourly_charts.php" class="nav-link">
+          <a href="hourly_charts.php" class="nav-link active bg-info">
           <i class="nav-icon fas fa-chart-bar"></i>
             <p>
              Hourly Chart
