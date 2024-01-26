@@ -14,30 +14,30 @@
         left_strip_ng();
         camera_ng();
     }
-const import_machine_func = () =>{
-    let import_machine_data = document.getElementById('import_machine_data').value;
-    if (import_machine_data === '') {
-                Swal.fire({
-                    icon: 'info',
-                    title: 'Select Machine !!!',
-                    text: 'Information',
-                    showConfirmButton: false,
-                    timer: 1000
-                });
-            } else {
-                $('#import_error_data').modal('hide');
-                Swal.fire({
-                    icon: 'info',
-                    title: 'Please Wait!!',
-                    text: '',
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    allowEscapeKey: false,
-                    allowEnterKey: false
-                });
-            }
-}
-    
+    const import_machine_func = () => {
+        let import_machine_data = document.getElementById('import_machine_data').value;
+        if (import_machine_data === '') {
+            Swal.fire({
+                icon: 'info',
+                title: 'Select Machine !!!',
+                text: 'Information',
+                showConfirmButton: false,
+                timer: 1000
+            });
+        } else {
+            $('#import_error_data').modal('hide');
+            Swal.fire({
+                icon: 'info',
+                title: 'Please Wait!!',
+                text: '',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+                allowEnterKey: false
+            });
+        }
+    }
+
 
 
     const fetch_opt_sam_machine_data = () => {
@@ -362,6 +362,7 @@ const import_machine_func = () =>{
                     input_date_from: input_date_from,
                     input_date_to: input_date_to
                 }, success: function (response) {
+                    response = response.trim();
                     if (response == 'success') {
                         Swal.fire({
                             icon: 'info',
@@ -387,8 +388,8 @@ const import_machine_func = () =>{
         }
     }
 
-const delete_sam_error = () => {
-    let delete_sam_machine = document.getElementById('delete_sam_machine').value;
+    const delete_sam_error = () => {
+        let delete_sam_machine = document.getElementById('delete_sam_machine').value;
         let delete_date_from = document.getElementById('delete_date_from').value;
         let delete_date_to = document.getElementById('delete_date_to').value;
 
@@ -416,7 +417,7 @@ const delete_sam_error = () => {
                 showConfirmButton: false,
                 timer: 1000
             });
-        }else{
+        } else {
             $.ajax({
                 type: "POST",
                 url: '../../process/admin/dashboard/dashboard_p.php',
@@ -448,9 +449,9 @@ const delete_sam_error = () => {
                     }
                 }
             });
-        } 
+        }
 
-}
+    }
 
 
 
