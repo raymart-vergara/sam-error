@@ -1,6 +1,5 @@
 <?php
 include '../../../process/conn.php';
-
 $method = $_POST['method'];
 
 if ($method == 'fetch_opt_sam_machine_data') {
@@ -31,7 +30,6 @@ if ($method == 'fetch_opt_sam_machine_data') {
    }
    // Fetch data from the second table (table2)
    echo json_encode($data);
-
 } else if ($method == 'm_update_target') {
    // Trim input to prevent SQL injection using prepared statements
    $m_input_target = trim($_POST['m_input_target']);
@@ -39,19 +37,14 @@ if ($method == 'fetch_opt_sam_machine_data') {
    $m_input_date_to = trim($_POST['m_input_date_to']);
    // Use prepared statements and placeholders
    $query = "UPDATE sam_error SET `m_target` = $m_input_target WHERE error_date BETWEEN '$m_input_date_from 00:00:00' AND '$m_input_date_to 23:59:59'";
-   // $query = "UPDATE sam_error SET m_target = $m_input_target WHERE error_date IN (SELECT DISTINCT error_Date FROM sam_error);";
    $stmt = $conn->prepare($query);
    // Execute the query
-   try {
-      // Execute the query
-      if ($stmt->execute()) {
-          echo "success";
-      } else {
-          echo "error";
-      }
-  } catch (PDOException $e) {
-      echo "Database Error: " . $e->getMessage();
-  }
-
+   if ($stmt->execute()) {
+      echo "success";
+   } else {
+      echo "error";
+   }
 }
+
+
 ?>
