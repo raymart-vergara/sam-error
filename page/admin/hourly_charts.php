@@ -29,33 +29,37 @@
                     <section class="container-lg">
                         <div class=" d-flex align-items-end mt-4">
                             <div class="p-2 col-3">
-                               <a href="#" class="btn btn-info shadow" data-toggle="modal"
-                                    data-target="#m_target_data_modal">+
-                                    Add Target </a>
-                            </div>
-                            <div class="p-2 col-3">
-                                <label for="all_date_from_search">Date From:</label>
-                                <input type="date" id="all_date_from_search" class="form-control  border-info shadow"
-                                    autocomplete="off" onchange="fitler_all()" />
-                            </div>
-                            <div class="p-2 col-3">
-                                <label for="date_to_search">Date To:</label>
-                                <input type="date" id="all_date_to_search" class="form-control  border-info shadow"
-                                    autocomplete="off" onchange="fitler_all()">
-                            </div>
-                            <div class="p-2 col-3">
-                                <label for="sam_machine_data">&nbsp </label>
-                                <select name="sam_machine_data" id="category" autocomplete="off" onchange="fitler_all()"
-                                    class="pl-2 form-control btn bg-info shadow" required>
+                                <label for="">Machine </label>
+                                <select name="h_machine_list" id="h_machine_list" autocomplete="off" onchange="h_error_chart()"
+                                    class="pl-2 form-control btn bg-info shadow">
                                     <!-- <option>Select Machine</option> -->
                                 </select>
+                            </div>
+                            <div class="p-2 col-3">
+                                <label for="">Error </label>
+                                <select name="h_category_list" id="h_category_list" autocomplete="off" onchange="h_error_chart()"
+                                    class="pl-2 form-control btn bg-info shadow">
+                                    <!-- <option>Select Machine</option> -->
+                                </select>
+                            </div>
+                            <div class="p-2 col-3">
+                                <label for="">Error </label>
+                                <select name="" id="h_category_list2" autocomplete="off" onchange="h_error_chart()"
+                                    class="pl-2 form-control btn bg-info shadow">
+                                    <!-- <option>Select Machine</option> -->
+                                </select>
+                            </div>
+                            <div class="p-2 col-3">
+                                <label for="">Date:</label>
+                                <input type="date" id="h_date" class="form-control  border-info shadow"
+                                    autocomplete="off" onchange="h_error_chart()" />
                             </div>
                         </div>
                         <div class="container-fluid my-4 mb-5">
                             <div class="col-12 p-0">
                                 <div class="card rounded shadow">
                                     <div id="chart-container">
-                                        <canvas id="all_feed_ng_chart"
+                                        <canvas id="hourly_chart"
                                             style="position: relative; height: 25vh; width:80vw"></canvas>
                                     </div>
                                 </div>
@@ -68,6 +72,6 @@
     </div>
 </section>
 <?php include 'plugins/footer.php'; ?>
-<?php 
-// include 'plugins/js/hourly_charts_script.php'; 
+<?php
+include 'plugins/js/hourly_charts_script.php'; 
 ?>
