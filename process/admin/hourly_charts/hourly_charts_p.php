@@ -30,12 +30,12 @@ if ($method == 'h_categorylist') {
  } 
 
 if ($method == 'h_error_chart') {
-   $h_machinelist = $_POST['h_machine_list'];
-   $h_categorylist = $_POST['h_category_list'];
-   $h_categorylist2 = $_POST['h_category_list2'];
+   $h_machine_list = $_POST['h_machine_list'];
+   $h_category_list = $_POST['h_category_list'];
+   $h_category_list2 = $_POST['h_category_list2'];
    $h_date = $_POST['h_date'];
    // $check = "SELECT DATE(error_date) AS error_date , `target`, COUNT( error_date ) AS Feed_NG FROM sam_error WHERE error_code='M18045' AND sam_machine = '$sam_machine_data'  AND (error_date >= '$date_from_search 00:00:00' AND error_date <= '$date_to_search 23:59:59') GROUP BY DATE(error_date)";
-   $check = "SELECT DATE_FORMAT(error_date, '%H') AS hour_of_error, COUNT(*) AS count_per_hour, category AS total_error, sam_machine  FROM sam_error WHERE error_date LIKE '$h_date%' AND sam_machine='$h_machinelist' AND  category ='$h_categorylist' OR category ='$h_categorylist2'  GROUP BY hour_of_error;";
+   $check = "SELECT DATE_FORMAT(error_date, '%H') AS hour_of_error, COUNT(*) AS count_per_hour FROM sam_error WHERE error_date LIKE '$h_date%' AND sam_machine='$h_machine_list' AND  category IN ('$h_category_list','$h_category_list2')  GROUP BY hour_of_error;";
    $stmt = $conn->prepare($check);
    $stmt->execute();
    $data = [];
