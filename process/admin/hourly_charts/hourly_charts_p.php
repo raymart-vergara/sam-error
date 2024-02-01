@@ -14,20 +14,20 @@ if ($method == 'h_fetch_machinelist') {
    } else {
       echo '<option value="">Select Machine</option>';
    }
-} 
+}
 if ($method == 'h_categorylist') {
-    $query = "SELECT DISTINCT `category` FROM `machine_error` ORDER BY `category` ASC;";
-    $stmt = $conn->prepare($query);
-    $stmt->execute();
-    if ($stmt->rowCount() > 0) {
-       echo '<option value="">Select Error</option>';
-       foreach ($stmt->fetchALL(PDO::FETCH_ASSOC) as $row) {
-          echo '<option value="' . $row['category'] . '">' . htmlspecialchars($row['category']) . '</option>';
-       }
-    } else {
-       echo '<option value=" ">Select Machine</option>';
-    }
- } 
+   $query = "SELECT DISTINCT `category` FROM `machine_error` ORDER BY `category` ASC;";
+   $stmt = $conn->prepare($query);
+   $stmt->execute();
+   if ($stmt->rowCount() > 0) {
+      echo '<option value="">Select Error</option>';
+      foreach ($stmt->fetchALL(PDO::FETCH_ASSOC) as $row) {
+         echo '<option value="' . $row['category'] . '">' . htmlspecialchars($row['category']) . '</option>';
+      }
+   } else {
+      echo '<option value=" ">Select Machine</option>';
+   }
+}
 
 if ($method == 'h_error_chart') {
    $h_machine_list = $_POST['h_machine_list'];
@@ -44,6 +44,6 @@ if ($method == 'h_error_chart') {
    }
    // Fetch data from the second table (table2)
    echo json_encode($data);
-} 
+}
 
 ?>

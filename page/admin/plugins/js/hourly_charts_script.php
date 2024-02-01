@@ -89,7 +89,7 @@
                         }
                     },
                     data: {
-                        labels: hour_of_error,
+                        labels:hour_of_error,
                         datasets: [
                             {
                                 label: category[0],
