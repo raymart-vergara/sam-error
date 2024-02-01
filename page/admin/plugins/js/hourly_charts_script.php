@@ -61,7 +61,7 @@
                 for (let i = 0; i < data.length; i++) {
                     hour_of_error.push(data[i].hour_of_error);
                     count_per_hour.push(data[i].count_per_hour);
-                    category.push(data[i].total_error);
+                    category.push(data[i].category);
                 }
                     console.log(data)
                 let ctx = document.getElementById('hourly_chart').getContext('2d');

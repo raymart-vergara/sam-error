@@ -59,6 +59,7 @@ const load_error = () => {
                 error_category_list : error_category_list
             },
             success: function (response) {
+                response = response.trim();
                 if (response == 'success') {
                         Swal.fire({
                             icon: 'success',
