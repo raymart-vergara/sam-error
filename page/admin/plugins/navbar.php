@@ -20,6 +20,8 @@ include '../../process/login.php';
 
     <link rel="stylesheet" href="css/admin-page.css">
 
+    <script src="../../node_modules/chart.js/dist/chart.umd.js"></script>
+
     <link rel="icon" href="../../dist/img/sam-error-logo.png" type="image/x-icon" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="../../dist/css/font.min.css">
@@ -31,7 +33,6 @@ include '../../process/login.php';
     <link rel="stylesheet" href="../../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Sweet Alert -->
     <link rel="stylesheet" href="../../plugins/sweetalert2/dist/sweetalert2.min.css">
-
 
     <style>
         .loader {
@@ -54,95 +55,60 @@ include '../../process/login.php';
             }
         }
 
-        .certificate-container {
-            padding: 50px;
-            width: 1024px;
-            /* background-image: url("../../dist/img/CertificateTemplatev2.jpg"); */
+      
+
+        /* scrollbar */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
         }
 
-        .certificate {
-            border: 20px solid #0C5280;
-            padding: 25px;
-            height: 600px;
-            position: relative;
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
         }
 
-        .certificate:after {
-            content: '';
-            top: 0px;
-            left: 0px;
-            bottom: 0px;
-            right: 0px;
-            position: absolute;
-            background-size: 100%;
-            z-index: -1;
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
         }
 
-        .certificate-header>.logo {
-            width: 80px;
-            height: 80px;
-        }
-
-        .certificate-title {
-            text-align: center;
-        }
-
-        .certificate-body {
-            text-align: center;
-        }
-
-        h1 {
-
-            font-weight: 400;
-            font-size: 48px;
-            color: #0C5280;
-        }
-
-        .student-name {
-            font-size: 24px;
-        }
-
-        .certificate-content {
-            margin: 0 auto;
-            width: 750px;
-        }
-
-        .about-certificate {
-            width: 380px;
-            margin: 0 auto;
-        }
-
-        .topic-description {
-
-            text-align: center;
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #332D2D;
         }
     </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini sidebar-collapse">
     <div class="wrapper">
-
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="../../dist/img/logo.png" alt="logo" height="60" width="60">
+        <div class="preloader flex-column justify-content-center align-items-center bg-dark">
+            <img class="animation__shake" src="../../dist/img/sam-error-logo.png" alt="logo" height="300" width="300">
         </div>
-
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand glassmorph">
-            <!-- Left navbar links -->
+        <nav class="main-header navbar navbar-expand bg-dark bg-gray navbar-light bg-gray-dark border-0 ">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link text-white" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars text-white"></i></a>
                 </li>
             </ul>
-
-            <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
+                    <h5 class="m-0 p-0">SAM ERROR MONITORING SYSTEM</h5>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt text-white"></i>
                     </a>
                 </li>
+
             </ul>
         </nav>
         <!-- /.navbar -->

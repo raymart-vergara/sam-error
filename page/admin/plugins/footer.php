@@ -1,16 +1,21 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2023. Developed by: Raymart Vergara</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
-    </div>
-  </footer>
+  <strong>Developed by: Raymart Vergara</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Copyright &copy; 2023 | Version</b> 1.0.0
+  </div>
+</footer>
 <?php
 //MODALS
 include '../../modals/logout_modal.php';
-// include '../../modals/new_account.php';
-// include '../../modals/update_account.php';
-// include '../../modals/import_accounts.php';
+include '../../modals/new_account.php';
+include '../../modals/update_account.php';
+include '../../modals/target_data_modal.php';
+include '../../modals/m_target_data_modal.php';
+include '../../modals/add_machine_modal.php';
+include '../../modals/add_error_modal.php';
+include '../../modals//import/import_error_data_modal.php';
+include '../../modals/delete_data_modal.php';
 // include '../../modals/new_exc.php';
 // include '../../modals/update_exc.php';
 // include '../../modals/import_exercise.php';
@@ -33,4 +38,5 @@ include '../../modals/logout_modal.php';
 <script src="../../dist/js/adminlte.js"></script>
 
 </body>
+
 </html>

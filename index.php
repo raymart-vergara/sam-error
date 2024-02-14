@@ -18,8 +18,6 @@ if (isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> SAM | Login </title>
   <link rel="alternate icon" href="dist/img/sam-error-logo.png" type="image/x-icon" />
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="plugins/style.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -46,11 +44,11 @@ if (isset($_SESSION['username'])) {
             -webkit-backdrop-filter: blur(15px);">
         <div class="login-logo">
           <img src="dist/img/sam-error-logo.png" style="height:180px;">
-          <h1 class="text-white"><b>SAM<br> Monitoring</b></h1>
+          <h1 class="text-white " style="text-shadow: 3px 3px #343c44"><b>SAM ERROR<br> MONITORING</b></h1>
         </div>
         <form action="" method="POST" id="login_form">
           <div class="input-group mb-3">
-            <input type="text" class="form-control background-none" name="username" placeholder="Username"
+            <input type="text" class="form-control" name="username" placeholder="Username"
               autocomplete="off" required>
             <div class="input-group-append">
               <div class="input-group-text">
@@ -59,7 +57,7 @@ if (isset($_SESSION['username'])) {
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off"
+            <input type="password" class="form-control shadow" name="password" placeholder="Password" autocomplete="off"
               required>
             <div class="input-group-append">
               <div class="input-group-text">
@@ -84,8 +82,7 @@ if (isset($_SESSION['username'])) {
 
 </body>
 
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
