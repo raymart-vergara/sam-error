@@ -51,14 +51,6 @@
                                 </thead>
                                 <tbody id="list_of_errors" style="text-align:center;"></tbody>
                             </table>
-                            <!-- <div class="row">
-                                <div class="col-6"></div>
-                                <div class="col-6">
-                                    <div class="spinner" id="spinner" style="display:none;">
-                                        <div class="loader float-sm-center"></div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                         <!-- /.card-body -->
                     </section>
