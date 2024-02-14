@@ -48,8 +48,7 @@ if (isset($_SESSION['username'])) {
         </div>
         <form action="" method="POST" id="login_form">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="username" placeholder="Username"
-              autocomplete="off" required>
+            <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" required>
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user text-white"></span>
@@ -74,15 +73,12 @@ if (isset($_SESSION['username'])) {
               Instruction</a>
           </div>
           <!-- /.col -->
+        </form>
       </div>
-      </form>
     </div>
-  </div>
   </div>
 
 </body>
-
-
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
